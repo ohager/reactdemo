@@ -1,0 +1,22 @@
+input[type="tel"],
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  border: 1px solid #ddd;
+  padding: .4rem .8rem;
+}
+
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+  border: 1px solid #428bca;
+}
+
+input[type="submit"] {
+  font-weight: bold;
+  padding: .4rem .8rem;
+  border: 1px solid #428bca;
+  background: #3b5998;
+  color: #fff;
+}

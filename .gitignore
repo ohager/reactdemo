@@ -1,0 +1,5 @@
+node_modules/
+.idea/
+.jsx-cache
+js/views/components/
+npm-debug.log

@@ -1,0 +1,76 @@
+.onoffswitch {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  -moz-transition: margin 0.1s ease-in 0s;
+  -webkit-transition: margin 0.1s ease-in 0s;
+  -o-transition: margin 0.1s ease-in 0s;
+  transition: margin 0.1s ease-in 0s;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "Sim";
+  padding-left: 10px;
+  background-color: #428bca;
+  color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "Não";
+  padding-right: 10px;
+  background-color: #f1f1f1;
+  color: #333;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 12px;
+  margin: 10px;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  -moz-transition: all 0.1s ease-in 0s;
+  -webkit-transition: all 0.1s ease-in 0s;
+  -o-transition: all 0.1s ease-in 0s;
+  transition: all 0.1s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}

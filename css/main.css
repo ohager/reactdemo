@@ -1,0 +1,109 @@
+@import url("custom-bootstrap.css");
+
+/* Componentes  */
+
+@import url("components/cards.css");
+@import url("components/input.css");
+@import url("components/typeahead.css");
+@import url("components/switch.css");
+@import url("components/buttons.css");
+@import url("components/accordion.css");
+@import url("components/loading.css");
+
+body {
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 5em 0 0;
+  position: relative;
+}
+/*  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Section crud   */
+.section-add-item .panel-default > .panel-heading,
+.section-add-item h6,
+.section-details h6 {
+  color: #fff;
+  background-color: #2e6da4;
+  border-color: #428bca;
+}
+.section-add-item h6,
+.section-details h6 {
+  border-radius: 4px;
+  padding: .8rem;
+}
+
+.detail-component-container{
+  min-height: 1em;
+  cursor: pointer;
+}
+.detail-component-container strong{
+    display: block;
+}
+
+/* Efeitos e validaçoes html5 */
+
+/* animation  */
+.animation, animation-details{
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  
+  -moz-transition-property: all;
+  -moz-transition-duration: .5s;
+  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  
+  -ms-transition-property: all;
+  -ms-transition-duration: .5s;
+  -ms-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.animation-delay{
+   -webkit-transition-delay: 3s;
+   -ms-transition-delay: 3s;
+   -o-transition-delay: 3s;
+   transition-delay: 3s;       
+}
+
+/*  Slider */  
+#slider {
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background: #f5f5f5;
+  border: 0;
+}
+#slider.open {
+  visibility: visible;
+  border: 1px solid #dddddd;
+  margin-top: 2rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  max-height: 500rem;
+}
+#slider-details.open {
+  max-height: 500rem;
+}
+
+
+/* Footer  */
+footer {
+  background-color: rgba(0, 0, 0, .75);
+  color: #fff;
+}
+footer p {
+  margin: 0;
+  font-size: .75em;
+  line-height: 3rem;
+}

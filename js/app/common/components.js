@@ -1,0 +1,19 @@
+define(function(){
+	/*Register new COMMON components here*/
+	require('component/address.field');
+	require('component/card.list');
+	require('component/cardscontrol');
+	require('component/checkbox.input');
+	require('component/contact.field');
+	require('component/details/details.list');
+	require('component/dropdown');
+	require('component/dropdown.rest');
+	require('component/editor.frame');
+	require('component/email.input');
+	require('component/login.form');
+	require('component/more.button');
+	require('component/text.area');
+	require('component/text.input');
+	require('component/header');
+	require('component/footer');
+});

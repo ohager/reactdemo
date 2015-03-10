@@ -1,0 +1,95 @@
+.ball {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 4px solid rgba(66, 103, 150, 1);
+  opacity: .9;
+  border-top: 4px solid rgba(0, 0, 0, 0);
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  border-radius: 100%;
+  box-shadow: 0 0 4px #426796;
+  -webkit-animation: spin .5s infinite linear;
+  -moz-animation: spin .5s infinite linear;
+  -ms-animation: spin .5s infinite linear;
+  animation: spin .5s infinite linear;
+}
+
+.ball-small {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 4px solid rgba(255, 143, 50, 1);
+  opacity: .9;
+  border-top: 4px solid rgba(0, 0, 0, 0);
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  border-radius: 100%;
+  box-shadow: 0 0 4px rgb(255, 143, 50);
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  -webkit-animation: spin .5s infinite linear;
+  -moz-animation: spin .5s infinite linear;
+  -ms-animation: spin .5s infinite linear;
+  animation: spin .5s infinite linear;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinoff {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spinoff {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@-ms-keyframes spin {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes spinoff {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(-360deg);
+  }
+}
