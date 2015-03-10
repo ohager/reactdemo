@@ -1,2 +1,2 @@
 # reactdemo
-Demonstration of ReactJS for DevCampo 2015
+Demonstration of ReactJS for DevCamp 2015
