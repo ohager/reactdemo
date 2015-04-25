@@ -10,12 +10,14 @@ node ./node_modules/requirejs/bin/r.js -o build.js
 
 echo Cleaning up...
 cd ./release-build
+
 rd jsx /S /Q
-rd documentos /S /Q
-del *.bat
 del build*.*
 del package.json
 del README.MD
+del LICENSE
+del .gitignore
+
 cd ..
 
 echo Build Finished!
