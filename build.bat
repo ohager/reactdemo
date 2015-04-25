@@ -11,6 +11,7 @@ node ./node_modules/requirejs/bin/r.js -o build.js
 echo Cleaning up...
 cd ./release-build
 rd jsx /S /Q
+rd documentos /S /Q
 del *.bat
 del build*.*
 del package.json

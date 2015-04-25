@@ -1,7 +1,7 @@
 {
-  "name": "notaagil",
+  "name": "reactdemo",
   "version": "1.0.0",
-  "description": "Nota Agil",
+  "description": "Demos with ReactJS",
   "main": "build.js",
   "devDependencies": {
     "requirejs": "^2.1.15",
