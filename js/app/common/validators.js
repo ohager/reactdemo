@@ -67,6 +67,9 @@ define(['jquery', 'jqueryMask', 'common/maskdefinitions', 'app/config', 'common/
 				return Rx.EMAIL.test(text);
 			}
 		},
+		validateMinimumCurrency: function(event){
+			Validator.validateGeneric(event, function(unmasked) { return unmasked >= 0.01; });
+		},
 		validateNonEmpty: function (event) {
 			Validator.validateRegex(event, Rx.NOT_EMPTY);
 		},

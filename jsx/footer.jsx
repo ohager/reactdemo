@@ -15,7 +15,7 @@ define(['react'], function (React) {
 				<footer className="navbar-fixed-bottom">
 					<div className="container">
 						<div className="row">
-							<p>© Nota ágil 2015</p>
+							<p>Don't miss my site: <a href="www.devbutze.com">DevButze</a> </p>
 						</div>
 					</div>
 				</footer>

@@ -9,7 +9,8 @@
   },
   "scripts": {
     "jsx": "node ./node_modules/react-tools/bin/jsx ./jsx ./js/views/components --cache-dir ./.jsx-cache -x jsx",
-    "jsx-watch": "node ./node_modules/react-tools/bin/jsx ./jsx ./js/views/components --cache-dir ./.jsx-cache -x jsx --watch"
+    "jsx-watch": "node ./node_modules/react-tools/bin/jsx ./jsx ./js/views/components --cache-dir ./.jsx-cache -x jsx --watch",
+    "optimize": "node ./node_modules/requirejs/bin/r -o build.js"
   },
   "author": "Oliver Hager",
   "license": "MIT",

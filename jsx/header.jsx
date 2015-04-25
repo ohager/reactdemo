@@ -40,45 +40,31 @@ define(['react', 'reactrouter'], function (React, Router) {
 								<span className="icon-bar"></span>
 							</button>
 							<a className="navbar-brand" href="#">
-								<img src="images/logo.png" alt=""/>
+								<img src="images/logo.png" height="48" alt=""/>
 							</a>
 						</div>
 						<div id="navbar" className="navbar-collapse collapse">
 							<ul className="nav navbar-nav">
                               <li className="dropdown">
-                                <a id="dropServico" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><span className= "glyphicon glyphicon-wrench" aria-hidden="true"></span> Serviços <span className="caret"></span></a>
-                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropServico">
-                                    <MenuItem link="service" title="Serviços" />
+                                <a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                    <span className= "glyphicon glyphicon-wrench" aria-hidden="true"></span> Examples <span className="caret"></span></a>
+                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
+                                      <MenuItem link="twoway" title="2-Way Binding" />
+                                      <MenuItem link="notification" title="Notifications" />
+                                      <MenuItem link="thousands" title="Thousands" />
+									  <MenuItem link="composition" title="Composition" />
+									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
+
                                 </ul>
                               </li>
-                              <li className="dropdown">
-                                 <a id="dropVendas" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><span className= "glyphicon glyphicon-usd" aria-hidden="true"></span> Vendas<span className="caret"></span></a>
-                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropVendas">
-	                                  <MenuItem link="customer" title="Cliente"/>
-	                                  <MenuItem link="hauler" title="Transportadora"/>
-                                  </ul>
-                              </li>
-                              <li className="dropdown">
-                                 <a id="dropProdutos" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><span className= "glyphicon glyphicon-inbox" aria-hidden="true"></span> Produtos<span className="caret"></span></a>
-                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropProdutos">
-	                                  <MenuItem link="category" title="Categoria"/>
-                                      <MenuItem link="unit" title="Unidade"/>
-	                                  <MenuItem link="supplier" title="Fornecedor"/>
-	                                  <MenuItem link="product" title="Produto"/>
-                                  </ul>
-                              </li>
-                              <li className="dropdown">
-                                <a id="dropStore" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><span className= "glyphicon glyphicon-briefcase" aria-hidden="true"></span> Lojas <span className="caret"></span></a>
-                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropStore">
-                                    <MenuItem link="store" title="Lojas" />
-                                </ul>
-                              </li>
-                              <li className="dropdown">
-                                <a id="dropUser" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><span className= "glyphicon glyphicon-user" aria-hidden="true"></span> Usuários <span className="caret"></span></a>
-                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropUser">
-                                    <MenuItem link="user" title="Usuários" />
-                                </ul>
-                              </li>
+								<li className="dropdown">
+									<a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<span className= "glyphicon glyphicon-fire" aria-hidden="true"></span> Promises <span className="caret"></span></a>
+									<ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
+										<MenuItem link="q" title="Q" />
+										<MenuItem link="harmony" title="Native Promises" />
+									</ul>
+								</li>
 							</ul>
 						</div>
 					</div>

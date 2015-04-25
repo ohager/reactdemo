@@ -4,18 +4,15 @@ define(['react',
 		'component/header',
 		'component/footer',
 		'component/notification',
-		'component/service/service.canvas',
-		'component/category/category.canvas',
-		'component/unit/unit.canvas',
-		'component/customer/customer.canvas',
-		'component/hauler/hauler.canvas',				
-		'component/product/product.canvas',
-        'component/supplier/supplier.canvas',
-        'component/store/store.canvas',
-        'component/user/user.canvas'
+		'component/canvas/twoway.example.canvas',
+        'component/canvas/notification.example.canvas',
+        'component/canvas/thousands.example.canvas',
+		'component/canvas/composition.example.canvas',
+		'component/canvas/decoupledcomposition.example.canvas',
+		'component/canvas/q.promises.canvas'
 	],
 
-	function (React, Router, $event, Header, Footer, Notification, ServiceCanvas, CategoryCanvas, UnitCanvas, CustomerCanvas, HaulerCanvas, ProductCanvas, SupplierCanvas, StoreCanvas,  UserCanvas) {
+	function (React, Router, $event, Header, Footer, Notification, TwoWayExampleCanvas, NotificationExampleCanvas, ThousandsExampleCanvas, CompositionExampleCanvas, DecoupledCompositionExampleCanvas, QPromisesCanvas) {
 
 	var RouteHandler = Router.RouteHandler;
 	var Route = Router.Route;
@@ -25,7 +22,6 @@ define(['react',
 
 		componentDidMount : function(){
 		},
-
 
 		render: function () {
             return (
@@ -48,18 +44,14 @@ define(['react',
 
 	var routes = (
 		<Route name='app' path='/' handler={Application}>
-			<Route name='service' path='servico/servico' handler={ServiceCanvas}/>
-			<Route name='customer' path='vendas/cliente' handler={CustomerCanvas}/>
-			<Route name='hauler' path='vendas/transportadora' handler={HaulerCanvas}/>
-			<Route name='category' path='product/category' handler={CategoryCanvas}/>
-			<Route name='unit' path='product/unit' handler={UnitCanvas}/>
-			<Route name='product' path='product/product' handler={ProductCanvas}/>
-			<Route name='supplier' path='product/supplier' handler={SupplierCanvas}/>
-			<Route name='store' path='store/store' handler={StoreCanvas}/>
-			<Route name='user' path='user/user' handler={UserCanvas}/>
-
-
-			<DefaultRoute handler={ServiceCanvas}/>
+			<Route name='twoway' path='example/twoway' handler={TwoWayExampleCanvas}/>
+            <Route name='notification' path='example/notification' handler={NotificationExampleCanvas}/>
+            <Route name='thousands' path='example/1000' handler={ThousandsExampleCanvas}/>
+			<Route name='composition' path='example/composition' handler={CompositionExampleCanvas}/>
+			<Route name='decoupledcomposition' path='example/composition/decoupled' handler={DecoupledCompositionExampleCanvas}/>
+			<Route name='q' path='promises/q' handler={QPromisesCanvas}/>
+			<Route name='harmony' path='promises/harmony' handler={QPromisesCanvas}/>
+			<DefaultRoute handler={TwoWayExampleCanvas}/>
 		</Route>
 	);
 

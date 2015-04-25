@@ -1,3 +1,4 @@
+release-build/
 node_modules/
 .idea/
 .jsx-cache

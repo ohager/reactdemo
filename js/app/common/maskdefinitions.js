@@ -1,7 +1,7 @@
 define(function () {
 
 	function toDecimal(value) {
-		return value.replace('.', '').replace(',', '.') * 1.0;
+		return value.replace(/\./g, '').replace(/,/,'.') * 1.0;
 	}
 
 	function intToStr(value){

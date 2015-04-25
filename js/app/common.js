@@ -10,7 +10,7 @@ requirejs.config({
         common: '../app/common',
         eventemitter: 'eventemitter',
         jquery : 'jquery',
-        jqueryMask : 'jquery.inputmask.bundle.min'
+        jqueryMask : 'jquery.inputmask.bundle.min',
     },
 
     shim: {
@@ -30,5 +30,6 @@ requirejs.config({
 
 require(['jquery', 'bootstrap', 'react'], function($, _b, React){
 
+    // initial load
 	window.React = React;
 });

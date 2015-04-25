@@ -9,6 +9,9 @@ define(  function () {
         this.getAuthToken = function(){
             return window.localStorage.getItem(TOKEN_KEY);
         };
+        this.removeAuthToken = function(token){
+            window.localStorage.removeItem(TOKEN_KEY);
+        };
 
 	    this.applyAuth = function(xhr){
 			var auth = 'NA-AUTH ' + self.getAuthToken();

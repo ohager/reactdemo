@@ -41,13 +41,13 @@ define(['react', 'restservice/auth.service', 'common/auth', 'common/route'], fun
                 return (
                     <form id="login">
                         <small>&nbsp;{this.state.login}</small>
-                        <InputField id="username" type="text" placeholder="usuário" onChange={this.update}></InputField>
+                        <input id="username" type="text" placeholder="username" onChange={this.update}/>
                         <br/>
-                        <InputField id="password" type="password" placeholder="senha" onChange={this.update}></InputField>
+                        <input id="password" type="password" placeholder="password" onChange={this.update}/>
                         <br/>
                         <div className="wrapper">
                             <span className="group-btn">
-                                <a href="#" className="btn btn-primary btn-md" onClick={this.login}>Entrar&nbsp;
+                                <a href="#" className="btn btn-primary btn-md" onClick={this.login}>Login&nbsp;
                                     <i className="glyphicon glyphicon-off"></i>
                                 </a>
                             </span>

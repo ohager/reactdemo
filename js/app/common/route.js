@@ -7,7 +7,7 @@ define(function() {
             return !!window.localStorage.getItem(PAGE_KEY);
         },
 	    isLoginPage : function(){
-		    return window.location.href == 'login.html';
+		    return  /login.html#?$/.test(window.location.pathname);
 	    },
         // TODO use on logout
         clearStoredPage : function(){
@@ -23,7 +23,7 @@ define(function() {
 	        window.location.href = 'login.html';
         },
         gotoStartPage : function(){
-            var defaultStartPage = 'service.html';
+            var defaultStartPage = 'index.html';
             window.location.href = this.hasStoredPage() ? this.getStoredPage() : defaultStartPage;
         }
     }
