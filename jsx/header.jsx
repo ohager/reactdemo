@@ -54,7 +54,7 @@ define(['react', 'reactrouter'], function (React, Router) {
                                       <MenuItem link="thousands" title="Thousands" />
 									  <MenuItem link="composition" title="Composition" />
 									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
-
+									  <MenuItem link="functionalcomponent" title="Functional Component" />
                                 </ul>
                               </li>
 								<li className="dropdown">

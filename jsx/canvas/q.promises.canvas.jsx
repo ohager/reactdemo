@@ -12,6 +12,7 @@ define(['react', 'q', 'common/messagehandler'],
                 }, 3000);
             },
 
+
             operationB: function (callbackSuccess, callBackError) {
                 setTimeout(function () {
                     callbackSuccess("Operation B Done");

@@ -106,3 +106,28 @@ footer p {
   font-size: .75em;
   line-height: 3rem;
 }
+
+
+/* Animation Example */
+.example-enter{
+  opacity: 0.1;
+  transition: all .5s ease-in;
+  transform: translateX(-1000px);
+}
+
+.example-enter.example-enter-active{
+  transform: translateX(0px);
+  opacity: 1;
+
+}
+
+.example-leave {
+  opacity: 1;
+  transform: scale(1,1);
+  transition: all .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transform: scale(0,0);
+}

@@ -1,4 +1,6 @@
-# Project Bootstrap for React
+# Example Project for ReactJS
+
+A collection of example to demonstrate ReactJS capabalities. It also serves as playground!
 
 This project uses
 
@@ -9,9 +11,6 @@ This project uses
 - q, as promise API
 - jquery, just as dependency, or if you really need it
 - jquery.inputmask, jquery plugin for input masking
-
-
-
 
 # Installation
 
