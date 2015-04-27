@@ -93,6 +93,13 @@ define(function(require){
 
             render: function () {
 
+                var codeExample = "function(){\n" +
+                    "\tvar deferred = $q.defer();\n" +
+                    "\tsetTimeout(function () {\n" +
+                    "\t\tresolve('Operation A Done!');\n"+
+                    "\t}, 2500);\n" +
+                    "\treturn deferred.promise;\n" +
+                    "}";
 
                 var width = {width: this.state.operationProgress * 10 + "%"};
 
@@ -102,6 +109,9 @@ define(function(require){
                             <div className="col-xs-6 col-sm-6">
                                 <h2>Example of Q Promises</h2>
                                 <hr/>
+                            </div>
+                            <div className="col-xs-6 col-sm-6">
+                                <pre>{codeExample}</pre>
                             </div>
                         </div>
                         <div className="row">

@@ -12,6 +12,7 @@ define(	function (require) {
 	var DecoupledCompositionExampleCanvas = require('component/canvas/decoupledcomposition.example.canvas');
 	var AnimationExampleCanvas = require('component/canvas/animation.example.canvas');
 	var QPromisesCanvas = require('component/canvas/q.promises.canvas');
+	var Ecma6PromisesCanvas = require('component/canvas/ecma6.promises.canvas');
 
 	var RouteHandler = Router.RouteHandler;
 	var Route = Router.Route;
@@ -51,7 +52,7 @@ define(	function (require) {
 			<Route name='functionalcomponent' path='example/functional/animation' handler={AnimationExampleCanvas}/>
 
 			<Route name='q' path='promises/q' handler={QPromisesCanvas}/>
-			<Route name='harmony' path='promises/harmony' handler={QPromisesCanvas}/>
+			<Route name='harmony' path='promises/harmony' handler={Ecma6PromisesCanvas}/>
 			<DefaultRoute handler={TwoWayExampleCanvas}/>
 		</Route>
 	);

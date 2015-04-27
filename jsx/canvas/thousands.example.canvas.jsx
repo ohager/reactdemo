@@ -23,11 +23,6 @@ define(function (require) {
 
             },
 
-            componentWillUpdate : function(){
-
-            },
-
-
 
             changeRandomColors : function(event){
                 this.setState({randomColors : event.target.checked});
