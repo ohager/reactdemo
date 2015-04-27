@@ -1,4 +1,7 @@
-define(['react', 'reactrouter'], function (React, Router) {
+define(function (require) {
+
+	var React = require('react');
+	var Router = require('reactrouter');
 
 	var Link = Router.Link;
 

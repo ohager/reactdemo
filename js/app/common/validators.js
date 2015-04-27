@@ -1,4 +1,6 @@
-define(['jquery', 'jqueryMask', 'common/maskdefinitions', 'app/config', 'common/validators/validator.cnpj', 'common/validators/validator.cpf'], function ($jquery, __mask, $maskdefinitions, $config, $validatorCnpj, $validatorCpf) {
+define(
+	['jquery', 'jqueryMask', 'common/maskdefinitions', 'app/config', 'common/validators/validator.cnpj', 'common/validators/validator.cpf'],
+	function ($jquery, __mask, $maskdefinitions, $config, $validatorCnpj, $validatorCpf) {
 
 	var Validator = new function() {
 		function markInvalid(j) {

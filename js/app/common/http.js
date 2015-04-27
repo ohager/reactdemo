@@ -1,4 +1,11 @@
-define(['jquery', 'q', 'common/auth', 'common/route', 'common/messagehandler', 'common/event'], function ($, $q, $auth, $route, $messageHandler, $event) {
+define(function (require) {
+
+    var $ = require('jquery');
+    var $q = require('q');
+    var $auth = require('common/auth');
+    var $route = require('common/route');
+    var $messageHandler = require('common/messagehandler');
+    var $event = require('common/event');
 
     function XhrParser(xhrObj) {
         var xhr = xhrObj;

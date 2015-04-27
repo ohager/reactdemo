@@ -1,5 +1,7 @@
-define(['react', 'common/event'],
-	function (React, $event) {
+define(	function (require) {
+
+		var React = require('react');
+		var $event = require('common/event');
 
 		return React.createClass({
 

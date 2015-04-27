@@ -1,17 +1,13 @@
-define(['react', 'restservice/auth.service', 'common/auth', 'common/route'], function (React, AuthService, $auth, $route) {
+define(function(require){
 
-
-        var InputField = React.createClass({
-            render: function () {
-                return (
-                    <input type={this.props.type} id={this.props.id} className="form-control input-sm chat-input" placeholder={this.props.placeholder} onChange={this.props.onChange} />
-                );
-            }
-        });
+        var React = require('react');
+        var AuthService = require('restservice/auth.service');
+        var $auth = require('common/auth');
+        var $route = require('common/route');
 
         var credentials = { };
 
-        return {
+        return React.createClass({
 
             getInitialState: function () {
                 return {login : ''};
@@ -55,6 +51,6 @@ define(['react', 'restservice/auth.service', 'common/auth', 'common/route'], fun
                     </form>
                 );
             }
-        };
+        });
     }
 );

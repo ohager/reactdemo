@@ -1,10 +1,7 @@
-define([
-        'react',
-        'common/event',
-        'common/messagehandler'
-    ],
-    function (React, $event, $messageHandler) {
+define(function (require) {
 
+        var React = require('react');
+        var $event = require('common/event');
 
         var SearchBox = React.createClass(
             {

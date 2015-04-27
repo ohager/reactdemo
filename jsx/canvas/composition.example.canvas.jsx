@@ -1,9 +1,6 @@
-define([
-        'react',
-        'common/messagehandler'
-    ],
-    function (React, $messageHandler) {
+define(function (require) {
 
+        var React = require('react');
 
         var EditorFrame = React.createClass(
             {

@@ -1,5 +1,9 @@
-define(['react', 'q', 'common/messagehandler'],
-    function (React, Q, MessageHandler) {
+define(function(require){
+
+    var React = require('react');
+    var Q = require('q');
+    var MessageHandler = require('common/messagehandler');
+
         return React.createClass({
 
             getInitialState: function () {
@@ -90,7 +94,7 @@ define(['react', 'q', 'common/messagehandler'],
             render: function () {
 
 
-                var width = { width : this.state.operationProgress * 10 + "%" };
+                var width = {width: this.state.operationProgress * 10 + "%"};
 
                 return (
                     <div>

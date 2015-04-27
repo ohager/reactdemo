@@ -1,8 +1,7 @@
-define([
-        'react',
-        'common/messagehandler'
-        ],
-    function (React, $messageHandler) {
+define(function (require) {
+
+        var React = require('react');
+        var MessageHandler = require('common/messagehandler');
 
         return React.createClass({
 
@@ -14,7 +13,7 @@ define([
             },
 
             onSubmit : function(event){
-                $messageHandler.showInfo("Submitted: " + this.state.text);
+                MessageHandler.showInfo("Submitted: " + this.state.text);
             },
 
             render: function () {

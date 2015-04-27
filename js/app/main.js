@@ -1,4 +1,6 @@
-define(['react', 'component/application'], function (React, Application) {
+define( function ( require ) {
+
+	var Application = require('component/application');
 
 	Application.start();
 

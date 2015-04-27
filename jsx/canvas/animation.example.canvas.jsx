@@ -1,6 +1,6 @@
-define(['react'],
-    function (React) {
+define(function (require) {
 
+        var React = require('react');
         var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
         return React.createClass({

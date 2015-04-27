@@ -17,5 +17,5 @@ define(  function () {
 			var auth = 'NA-AUTH ' + self.getAuthToken();
 			xhr.setRequestHeader('Authorization', auth);
 		}
-    }
+    };
 });

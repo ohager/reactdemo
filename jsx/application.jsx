@@ -1,21 +1,17 @@
-define(['react',
-		'reactrouter',
-		'common/event',
-		'component/header',
-		'component/footer',
-		'component/notification',
-		'component/canvas/twoway.example.canvas',
-        'component/canvas/notification.example.canvas',
-        'component/canvas/thousands.example.canvas',
-		'component/canvas/composition.example.canvas',
-		'component/canvas/decoupledcomposition.example.canvas',
-		'component/canvas/animation.example.canvas',
-		'component/canvas/q.promises.canvas'
-	],
+define(	function (require) {
 
-	function (React, Router, $event, Header, Footer, Notification,
-			  TwoWayExampleCanvas, NotificationExampleCanvas, ThousandsExampleCanvas, CompositionExampleCanvas, DecoupledCompositionExampleCanvas, AnimationExampleCanvas,
-			  QPromisesCanvas) {
+	var React = require('react');
+	var Router = require('reactrouter');
+	var Header = require('component/header');
+	var Footer = require('component/footer');
+	var Notification = require('component/notification');
+	var TwoWayExampleCanvas = require('component/canvas/twoway.example.canvas');
+	var NotificationExampleCanvas = require('component/canvas/notification.example.canvas');
+	var ThousandsExampleCanvas = require('component/canvas/thousands.example.canvas');
+	var CompositionExampleCanvas = require('component/canvas/composition.example.canvas');
+	var DecoupledCompositionExampleCanvas = require('component/canvas/decoupledcomposition.example.canvas');
+	var AnimationExampleCanvas = require('component/canvas/animation.example.canvas');
+	var QPromisesCanvas = require('component/canvas/q.promises.canvas');
 
 	var RouteHandler = Router.RouteHandler;
 	var Route = Router.Route;

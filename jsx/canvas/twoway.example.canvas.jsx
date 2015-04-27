@@ -1,7 +1,8 @@
-define(['react'],
-    function (React) {
+define(function (require) {
 
-        return React.createClass({
+    var React = require('react');
+
+    return React.createClass({
 
             mixins : [React.addons.LinkedStateMixin],
 
@@ -28,7 +29,7 @@ define(['react'],
                                 </form>
                             </div>
                             <div className="col-xs-6 col-sm-6">
-                                <span>Text typed: {this.state.text}</span>
+                                <pre>{this.state.text}</pre>
                             </div>
                         </div>
                     </div>
