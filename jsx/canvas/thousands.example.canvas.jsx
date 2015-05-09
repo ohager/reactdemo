@@ -1,14 +1,19 @@
 define(function (require) {
 
+
+
         var React = require('react');
 
         return React.createClass({
+
+            _start : 0,
+            _end : 0,
 
             mixins: [React.addons.LinkedStateMixin],
 
             // Note: The LinkedStateMixin does not work for complex state objects!
             getInitialState: function () {
-                return {rows: 50, columns: 20, randomColors: false}
+                return {rows: 50, columns: 20, randomColors: false, renderTime: 0}
             },
 
             componentWillMount : function(){
@@ -20,7 +25,12 @@ define(function (require) {
             },
 
             componentWillUpdate : function(){
+                this._start = window.performance.now();
+            },
 
+            componentDidUpdate : function(){
+                this._end = window.performance.now();
+                this.state.renderTime = (this._end - this._start).toFixed(2);
             },
 
 
@@ -73,6 +83,7 @@ define(function (require) {
                                 <h2>Example of Thousands of Items</h2>
                                 <hr/>
                             </div>
+
                         </div>
                         <div className="row">
                             <div className="col-xs-3 col-sm-3">
@@ -81,16 +92,18 @@ define(function (require) {
                             <div className="col-xs-3 col-sm-3">
                                 <input className="form-control" type="number" placeholder="Number of Columns" valueLink={this.linkState("columns")}/>
                             </div>
-                            <div className="col-xs-6 col-sm-6">
-                                <div class="checkbox">
+                            <div className="col-xs-3 col-sm-3">
+                                <div className="checkbox">
                                     <label>
                                         <input type="checkbox" onChange={this.changeRandomColors}/>
                                     &nbsp;Randomize Colors</label>
                                 </div>
                             </div>
+                            <div className="col-xs-3 col-sm-3">
+                                <pre>{'Render Time:' + this.state.renderTime + ' ms'}</pre>
+                            </div>
                         </div>
                         <div className="row">
-
                         </div>
                         <hr/>
                         <div className="panel panel-default">
