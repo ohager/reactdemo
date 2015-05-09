@@ -30,7 +30,7 @@ define(function (require) {
                             <div className="col-xs-8 col-sm-8">
                                 <form>
                                     <input className="form-control" type="text" placeholder="Type here" valueLink={this.linkState("text")}/>
-                                    <input type="button" className="btn btn-success" onClick={this.onSubmit}>Submit</input>
+                                    <button type="button" className="btn btn-success" onClick={this.onSubmit} disabled = {this.state.text.length === 0}>Submit</button>
                                 </form>
                             </div>
                         </div>

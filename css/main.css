@@ -3,10 +3,7 @@
 /* Componentes  */
 
 @import url("components/input.css");
-@import url("components/typeahead.css");
-@import url("components/switch.css");
 @import url("components/buttons.css");
-@import url("components/accordion.css");
 @import url("components/loading.css");
 
 body {

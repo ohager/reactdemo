@@ -24,25 +24,16 @@ define(	function (require) {
 					return this.state.message && this.state.type;
 				},
 
-				hide : function(){
+				hideNotification : function(){
 					this.setState({
 						type : null,
-						message : null,
-						secondsToVanish : 0
+						message : null
 					});
 				},
 
 				startVanishing : function(){
-					if(this.isVisible() && this.state.secondsToVanish > 0){
-						this.cancelVanish();
-						this._timeoutId = setTimeout(this.hide, this.state.secondsToVanish *  1000);
-					}
-				},
-
-				cancelVanish : function(){
-					if(this._timeoutId > 0) {
-						clearTimeout(this._timeoutId);
-					}
+					clearTimeout(this._timeoutId);
+					this._timeoutId = setTimeout(function(){this.hideNotification();}.bind(this), this.state.secondsToVanish *  1000);
 				},
 
 				showNotification : function(notification){
@@ -51,7 +42,9 @@ define(	function (require) {
 						message : notification.message,
 						secondsToVanish : notification.secondsToVanish
 					});
-					this.startVanishing();
+					if(notification.secondsToVanish > 0){
+						this.startVanishing();
+					}
 				},
 
 				render: function () {

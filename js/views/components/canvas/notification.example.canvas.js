@@ -30,7 +30,7 @@ define(function (require) {
                             React.createElement("div", {className: "col-xs-8 col-sm-8"}, 
                                 React.createElement("form", null, 
                                     React.createElement("input", {className: "form-control", type: "text", placeholder: "Type here", valueLink: this.linkState("text")}), 
-                                    React.createElement("input", {type: "button", className: "btn btn-success", onClick: this.onSubmit}, "Submit")
+                                    React.createElement("button", {type: "button", className: "btn btn-success", onClick: this.onSubmit, disabled: this.state.text.length === 0}, "Submit")
                                 )
                             )
                         )
