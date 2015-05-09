@@ -118,7 +118,7 @@ define(function (require) {
                 return (
                     React.createElement("div", {className: "panel panel-default"}, 
                         React.createElement("div", {className: "panel-heading"}, 
-                            React.createElement("h3", {className: "panel-title"}, "Customers")
+                            React.createElement("h3", {className: "panel-title"}, "Customers"), React.createElement("small", {className: "pull-right"}, "Found: ", this.state.customers.length)
                         ), 
                         React.createElement("div", {className: "panel-body"}, 
                             React.createElement("div", {className: "list-group"}, 

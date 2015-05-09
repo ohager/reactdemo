@@ -118,7 +118,7 @@ define(function (require) {
                 return (
                     <div className="panel panel-default">
                         <div className="panel-heading">
-                            <h3 className="panel-title">Customers</h3>
+                            <h3 className="panel-title">Customers</h3><small className="pull-right">Found: {this.state.customers.length}</small>
                         </div>
                         <div className="panel-body">
                             <div className="list-group">
