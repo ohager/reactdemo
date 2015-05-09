@@ -21,7 +21,7 @@ define(function (require) {
                                 React.createElement("div", {className: "input-group"}, 
                                     React.createElement("span", {className: "input-group-addon", id: "basic-addon1"}, React.createElement("span", {
                                         className: "glyphicon glyphicon-search", "aria-hidden": "true"})), 
-                                    React.createElement("input", {type: "search", placeholder: "Enter Search Text", className: "form-control", 
+                                    React.createElement("input", {type: "search", placeholder: "Enter Search Text (e.g. 'customer 10')", className: "form-control", 
                                            onChange: this.onSearchTermChanged})
                                 )
                             )

@@ -21,7 +21,7 @@ define(function (require) {
                                 <div className="input-group">
                                     <span className="input-group-addon" id="basic-addon1"><span
                                         className="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-                                    <input type="search" placeholder="Enter Search Text" className="form-control"
+                                    <input type="search" placeholder="Enter Search Text (e.g. 'customer 10')" className="form-control"
                                            onChange={this.onSearchTermChanged}/>
                                 </div>
                             </div>
