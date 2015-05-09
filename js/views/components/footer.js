@@ -17,7 +17,7 @@ define(function (require) {
 				React.createElement("footer", {className: "navbar-fixed-bottom"}, 
 					React.createElement("div", {className: "container"}, 
 						React.createElement("div", {className: "row"}, 
-							React.createElement("p", null, "Don't miss my site: ", React.createElement("a", {href: "www.devbutze.com"}, "DevButze"), " ")
+							React.createElement("p", null, "(?) Copyleft, 2015, ", React.createElement("a", {href: "https://www.devbutze.com"}, "DevButze"), " ")
 						)
 					)
 				)
