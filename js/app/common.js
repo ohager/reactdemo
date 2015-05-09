@@ -12,7 +12,7 @@ requirejs.config({
         jquery : 'jquery',
         jqueryMask : 'jquery.inputmask.bundle.min'
     },
-
+    waitSeconds: 20,
     shim: {
         'jqueryMask': {
 	        deps: ['jquery']
