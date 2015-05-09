@@ -17,7 +17,7 @@ define(	function (require) {
 
 				componentWillUnmount : function(){
 					$event.removeListener('show-notification', this.showNotification);
-					this.cancelVanish();
+					clearTimeout(this._timeoutId);
 				},
 
 				isVisible : function(){
@@ -37,21 +37,22 @@ define(	function (require) {
 				},
 
 				showNotification : function(notification){
-					this.setState({
+					this.state={
 						type : notification.type,
 						message : notification.message,
 						secondsToVanish : notification.secondsToVanish
-					});
+					};
 					if(notification.secondsToVanish > 0){
 						this.startVanishing();
 					}
+					this.forceUpdate();
 				},
 
 				render: function () {
 
-					return !this.isVisible() ? React.createElement("div", null) : (
+					return (
 
-						React.createElement("div", {className: "alert alert-dismissible alert-" + this.state.type, role: "alert"}, 
+						React.createElement("div", {className: "alert alert-dismissible alert-" + this.state.type, role: "alert", hidden: !this.isVisible()}, 
 							React.createElement("a", {className: "close", role: "button", onClick: this.hide}, "×"), 
 						    React.createElement("strong", null, this.state.message, " ")
 						)
