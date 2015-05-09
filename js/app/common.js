@@ -4,13 +4,13 @@ requirejs.config({
         app: '../app',
         bootstrap: 'bootstrap.min',
         react: 'react-with-addons', // for development only
-	    reactrouter: 'react-router',
+	    reactrouter: 'react-router.min',
         restservice: '../rest-services',
         component: '../views/components',
         common: '../app/common',
-        eventemitter: 'eventemitter',
+        eventemitter: 'eventemitter.min',
         jquery : 'jquery',
-        jqueryMask : 'jquery.inputmask.bundle.min',
+        jqueryMask : 'jquery.inputmask.bundle.min'
     },
 
     shim: {
