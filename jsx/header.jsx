@@ -54,8 +54,9 @@ define(function (require) {
                                   <ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
                                       <MenuItem link="twoway" title="2-Way Binding" />
                                       <MenuItem link="notification" title="Notifications" />
+                                      <MenuItem link="mixin" title="Mixin Example" />
                                       <MenuItem link="thousands" title="Thousands" />
-									  <MenuItem link="composition" title="Composition" />
+									  <MenuItem link="composition" title="Coupled Composition" />
 									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
 									  <MenuItem link="functionalcomponent" title="Decorator Component" />
                                 </ul>

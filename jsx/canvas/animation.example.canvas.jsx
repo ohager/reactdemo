@@ -36,26 +36,38 @@ define(function (require) {
             }, this);
 
             return (
-                <div className="row">
-                    <div className="col-xs-6 col-sm-6">
-                        <div className="panel panel-default">
-                            <div className="panel-heading">
-                                <h3 className="panel-title">To Do Items</h3>
-                            </div>
-                            <div className="panel-body">
-                                <div className="input-group">
-                                    <input ref="itemText" type="text" className="form-control"
-                                           placeholder="Enter Item Text..."/>
+                <div>
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-12">
+                            <h2>Example of Decorator Component</h2>
+
+                            <p>This example demonstrates the use of decorating components, i.e. components that extend other components with additional *functionality*.
+                                In this case some visual effects are added.
+                            </p>
+                            <hr/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-xs-6 col-sm-6">
+                            <div className="panel panel-default">
+                                <div className="panel-heading">
+                                    <h3 className="panel-title">To Do Items</h3>
+                                </div>
+                                <div className="panel-body">
+                                    <div className="input-group">
+                                        <input ref="itemText" type="text" className="form-control"
+                                               placeholder="Enter Item Text..."/>
                               <span className="input-group-btn">
                                 <button className="btn btn-default" type="button" onClick={this.addItem}>Add Item
                                 </button>
                               </span>
-                                </div>
-                                <hr/>
-                                <div className="list-group">
-                                    <CSSTransitionGroup transitionName="example">
-                                        {items}
-                                    </CSSTransitionGroup>
+                                    </div>
+                                    <hr/>
+                                    <div className="list-group">
+                                        <CSSTransitionGroup transitionName="example">
+                                            {items}
+                                        </CSSTransitionGroup>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -36,25 +36,37 @@ define(function (require) {
             }, this);
 
             return (
-                React.createElement("div", {className: "row"}, 
-                    React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
-                        React.createElement("div", {className: "panel panel-default"}, 
-                            React.createElement("div", {className: "panel-heading"}, 
-                                React.createElement("h3", {className: "panel-title"}, "To Do Items")
+                React.createElement("div", null, 
+                    React.createElement("div", {className: "row"}, 
+                        React.createElement("div", {className: "col-xs-12 col-sm-12"}, 
+                            React.createElement("h2", null, "Example of Decorator Component"), 
+
+                            React.createElement("p", null, "This example demonstrates the use of decorating components, i.e. components that extend other components with additional *functionality*." + ' ' +
+                                "In this case some visual effects are added."
                             ), 
-                            React.createElement("div", {className: "panel-body"}, 
-                                React.createElement("div", {className: "input-group"}, 
-                                    React.createElement("input", {ref: "itemText", type: "text", className: "form-control", 
-                                           placeholder: "Enter Item Text..."}), 
+                            React.createElement("hr", null)
+                        )
+                    ), 
+                    React.createElement("div", {className: "row"}, 
+                        React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
+                            React.createElement("div", {className: "panel panel-default"}, 
+                                React.createElement("div", {className: "panel-heading"}, 
+                                    React.createElement("h3", {className: "panel-title"}, "To Do Items")
+                                ), 
+                                React.createElement("div", {className: "panel-body"}, 
+                                    React.createElement("div", {className: "input-group"}, 
+                                        React.createElement("input", {ref: "itemText", type: "text", className: "form-control", 
+                                               placeholder: "Enter Item Text..."}), 
                               React.createElement("span", {className: "input-group-btn"}, 
                                 React.createElement("button", {className: "btn btn-default", type: "button", onClick: this.addItem}, "Add Item"
                                 )
                               )
-                                ), 
-                                React.createElement("hr", null), 
-                                React.createElement("div", {className: "list-group"}, 
-                                    React.createElement(CSSTransitionGroup, {transitionName: "example"}, 
-                                        items
+                                    ), 
+                                    React.createElement("hr", null), 
+                                    React.createElement("div", {className: "list-group"}, 
+                                        React.createElement(CSSTransitionGroup, {transitionName: "example"}, 
+                                            items
+                                        )
                                     )
                                 )
                             )

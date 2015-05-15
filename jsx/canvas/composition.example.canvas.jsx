@@ -4,6 +4,8 @@ define(function (require) {
 
         var EditorFrame = React.createClass(
             {
+                _model : {},
+
                 propTypes: {
                     title: React.PropTypes.string.isRequired,
                     onSave: React.PropTypes.func.isRequired
@@ -14,7 +16,7 @@ define(function (require) {
                 },
 
                 change : function(data){
-                    this.setState( {data : data});
+                    this._model = data;
                 },
 
                 setOwneeChangeCallback : function(){
@@ -31,7 +33,7 @@ define(function (require) {
                 },
 
                 onSave: function (event) {
-                    this.props.onSave(this.state.data);
+                    this.props.onSave(this._model);
                 },
 
                 render: function () {
@@ -130,7 +132,10 @@ define(function (require) {
                     <div>
                         <div className="row">
                             <div className="col-xs-12 col-sm-12">
-                                <h2>Example of Composition Types</h2>
+                                <h2>Example of Coupled Composition</h2>
+                                <p>This example demonstrates the coupled composition, whereas a generic and reusable EditorFrame component owns
+                                    different child components.
+                                </p>
                                 <hr/>
                             </div>
                         </div>
@@ -159,7 +164,6 @@ define(function (require) {
                                 <hr/>
                             </div>
                         </div>
-
                     </div>
                 )
             }

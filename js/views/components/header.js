@@ -54,8 +54,9 @@ define(function (require) {
                                   React.createElement("ul", {className: "dropdown-menu", role: "menu", "aria-labelledby": "dropExample"}, 
                                       React.createElement(MenuItem, {link: "twoway", title: "2-Way Binding"}), 
                                       React.createElement(MenuItem, {link: "notification", title: "Notifications"}), 
+                                      React.createElement(MenuItem, {link: "mixin", title: "Mixin Example"}), 
                                       React.createElement(MenuItem, {link: "thousands", title: "Thousands"}), 
-									  React.createElement(MenuItem, {link: "composition", title: "Composition"}), 
+									  React.createElement(MenuItem, {link: "composition", title: "Coupled Composition"}), 
 									  React.createElement(MenuItem, {link: "decoupledcomposition", title: "Decoupled Composition"}), 
 									  React.createElement(MenuItem, {link: "functionalcomponent", title: "Decorator Component"})
                                 )
