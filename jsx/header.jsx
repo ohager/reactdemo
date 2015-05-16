@@ -58,7 +58,7 @@ define(function (require) {
                                       <MenuItem link="thousands" title="Thousands" />
 									  <MenuItem link="composition" title="Coupled Composition" />
 									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
-									  <MenuItem link="functionalcomponent" title="Decorator Component" />
+									  <MenuItem link="decorator" title="Decorator Component" />
                                 </ul>
                               </li>
 								<li className="dropdown">

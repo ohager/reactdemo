@@ -81,6 +81,9 @@ define(function (require) {
                         React.createElement("div", {className: "row"}, 
                             React.createElement("div", {className: "col-xs-12 col-sm-12"}, 
                                 React.createElement("h2", null, "Example of Thousands of Items"), 
+                                React.createElement("p", null, "This example demonstrates the performance differences between partial (via virtual DOM) e complete DOM updates." + ' ' +
+                                    "When random colors are disabled React does not update all symbols, hence is faster." + ' ' +
+                                    "Randomized colors imply an update of all items."), 
                                 React.createElement("hr", null)
                             )
 

@@ -58,7 +58,7 @@ define(function (require) {
                                       React.createElement(MenuItem, {link: "thousands", title: "Thousands"}), 
 									  React.createElement(MenuItem, {link: "composition", title: "Coupled Composition"}), 
 									  React.createElement(MenuItem, {link: "decoupledcomposition", title: "Decoupled Composition"}), 
-									  React.createElement(MenuItem, {link: "functionalcomponent", title: "Decorator Component"})
+									  React.createElement(MenuItem, {link: "decorator", title: "Decorator Component"})
                                 )
                               ), 
 								React.createElement("li", {className: "dropdown"}, 

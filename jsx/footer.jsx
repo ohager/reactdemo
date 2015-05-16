@@ -17,7 +17,9 @@ define(function (require) {
 				<footer className="navbar-fixed-bottom">
 					<div className="container">
 						<div className="row">
-							<p>Made with <span className="glyphicon glyphicon-heart-empty"/> by <a href="https://www.devbutze.com">DevButze</a> </p>
+							<p>Made with <span className="glyphicon glyphicon-heart-empty"/> by
+                                <a href="https://www.devbutze.com">DevButze</a>
+                            </p>
 						</div>
 					</div>
 				</footer>

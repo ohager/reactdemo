@@ -41,7 +41,8 @@ define(function (require) {
                         <div className="col-xs-12 col-sm-12">
                             <h2>Example of Decorator Component</h2>
 
-                            <p>This example demonstrates the use of decorating components, i.e. components that extend other components with additional *functionality*.
+                            <p>This example demonstrates the use of decorating components, i.e. components that extend
+                                other components with additional *functionality*.
                                 In this case some visual effects are added.
                             </p>
                             <hr/>

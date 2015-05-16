@@ -81,6 +81,9 @@ define(function (require) {
                         <div className="row">
                             <div className="col-xs-12 col-sm-12">
                                 <h2>Example of Thousands of Items</h2>
+                                <p>This example demonstrates the performance differences between partial (via virtual DOM) e complete DOM updates.
+                                    When random colors are disabled React does not update all symbols, hence is faster.
+                                    Randomized colors imply an update of all items.</p>
                                 <hr/>
                             </div>
 

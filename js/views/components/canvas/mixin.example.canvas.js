@@ -10,22 +10,22 @@ define(function (require) {
         },
 
         validateCpf : function(cpf){
-            var isValid = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf);
-            this.state.isValid = isValid;
+            this.state.isValid = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf);
         }
     };
 
     return React.createClass({
 
+            // Here we extend our component with the validationMixin
             mixins : [ValidateCpfMixin],
 
-            // Note: The LinkedStateMixin does not work for complex state objects!
             getInitialState: function () {
                 return {cpf: '-'}
             },
 
             onTextChange : function(event){
                 var cpf = event.target.value;
+                // our mixin extension: method and state
                 this.validateCpf(cpf);
                 this.setState({cpf: this.state.isValid ? cpf : '-'});
             },
