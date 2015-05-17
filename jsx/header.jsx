@@ -50,7 +50,7 @@ define(function (require) {
 							<ul className="nav navbar-nav">
                               <li className="dropdown">
                                 <a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                    <span className= "glyphicon glyphicon-wrench" aria-hidden="true"></span> Examples <span className="caret"></span></a>
+                                    <span className= "glyphicon glyphicon-star-empty" aria-hidden="true"></span> Examples <span className="caret"></span></a>
                                   <ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
                                       <MenuItem link="twoway" title="2-Way Binding" />
                                       <MenuItem link="notification" title="Notifications" />
@@ -58,13 +58,20 @@ define(function (require) {
                                       <MenuItem link="thousands" title="Thousands" />
 									  <MenuItem link="composition" title="Coupled Composition" />
 									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
-									  <MenuItem link="decorator" title="Decorator Component" />
                                 </ul>
                               </li>
+                                <li className="dropdown">
+                                    <a id="dropDecorator" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                        <span className= "glyphicon glyphicon-record" aria-hidden="true"></span> Decorators <span className="caret"></span></a>
+                                    <ul className="dropdown-menu" role="menu" aria-labelledby="dropDecorator">
+                                        <MenuItem link="decorator.animation" title="Animation" />
+                                        <MenuItem link="decorator.logging" title="Logging" />
+                                    </ul>
+                                </li>
 								<li className="dropdown">
-									<a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-										<span className= "glyphicon glyphicon-fire" aria-hidden="true"></span> Promises <span className="caret"></span></a>
-									<ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
+									<a id="dropPromises" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<span className= "glyphicon glyphicon-retweet" aria-hidden="true"></span> Promises <span className="caret"></span></a>
+									<ul className="dropdown-menu" role="menu" aria-labelledby="dropPromises">
 										<MenuItem link="q" title="Q" />
 										<MenuItem link="harmony" title="Native Promises" />
 									</ul>
