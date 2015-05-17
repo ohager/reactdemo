@@ -5,9 +5,17 @@ define(function (require) {
 
     var Logger = React.createClass({displayName: "Logger",
 
+        // function backup store
+        funcStore : {
+            didUpdate : undefined,
+            willUpdate : undefined
+        },
+
         propTypes : {
             onLog : React.PropTypes.func
         },
+
+
 
         createTimestamp: function () {
             var d = new Date();
@@ -15,14 +23,14 @@ define(function (require) {
         },
 
         log: function (fname, msg) {
-            // TODO: Experiment with indexedDb!
-            var logMsg = 'L[' + this.createTimestamp() + '] ' + fname
+            // simple console logger... but we could extend it at our will, i.e using IndexedDB, or LocalStorage
+            var logMsg = 'L[' + this.createTimestamp() + '] ' + fname;
             if(msg){
                 logMsg += ': ' + msg;
             }
-            // simple console logger... but we could extend it at our will!!
             console.log(logMsg);
 
+            // propagating to owner
             if (this.props.onLog) {
                 this.props.onLog(logMsg);
             }
@@ -38,23 +46,25 @@ define(function (require) {
             this.log('Component Mounted - Initial Props', JSON.stringify(props));
             this.log('Component Mounted - Initial State', JSON.stringify(state));
 
+
             // Here starts the magic.
             // We are deeply inspecting the child component, and hooking in its lifecycle methods.
             // override children component function - so, we are really decorating
-            var funcCWU = this.props.children.type.prototype.componentWillUpdate;
+            // Hint: we  need to backup the original function, and return to its prior behaviour when Logger gets unmounted.
+            this.funcStore.willUpdate = this.props.children.type.prototype.componentWillUpdate;
             this.props.children.type.prototype.componentWillUpdate = function (nextProps, nextState) {
-                if (funcCWU) {
-                    funcCWU(nextProps, nextState);
+                if (this.funcStore.willUpdate) {
+                    this.funcStore.willUpdate(nextProps, nextState);
                 }
                 this.log('Updating Component - Next Props', JSON.stringify(nextProps));
                 this.log('Updating Component - Next State', JSON.stringify(nextState));
 
             }.bind(this);
 
-            var funcCDU = this.props.children.type.prototype.componentDidUpdate;
+            this.funcStore.didUpdate = this.props.children.type.prototype.componentDidUpdate;
             this.props.children.type.prototype.componentDidUpdate = function (prevProps, prevState) {
-                if (funcCDU) {
-                    funcCDU(prevProps, prevState);
+                if (this.funcStore.didUpdate) {
+                    this.funcStore.didUpdate(prevProps, prevState);
                 }
                 this.log('Component Updated');
             }.bind(this);
@@ -62,6 +72,11 @@ define(function (require) {
 
         componentWillUnmount: function () {
             this.log('Unmounting Component');
+
+            // resetting its prior behaviour
+            this.props.children.type.prototype.componentWillUpdate = this.funcStore.willUpdate;
+            this.props.children.type.prototype.componentDidUpdate = this.funcStore.didUpdate;
+
         },
 
         render: function () {
@@ -73,6 +88,10 @@ define(function (require) {
     var InnerComponent = React.createClass({displayName: "InnerComponent",
 
         // this component does not have any outer relation with our logger!
+
+        propTypes : {
+            title : React.PropTypes.string.isRequired
+        },
 
         getInitialState: function () {
             return {text: ''}
@@ -88,7 +107,7 @@ define(function (require) {
                 React.createElement("div", {className: "row"}, 
                     React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
                         React.createElement("form", null, 
-                            React.createElement("label", null, "Input Field"), 
+                            React.createElement("label", null, this.props.title), 
                             React.createElement("input", {className: "form-control", type: "text", placeholder: "Enter text", 
                                    onChange: this.onTextChange})
                         )
@@ -111,7 +130,7 @@ define(function (require) {
 
         componentWillUnmount : function()
         {
-            Event.removeListener('addLog');
+            Event.removeListener('addLog', this.addLog);
         },
 
         addLog : function(logMsg){
@@ -170,7 +189,7 @@ define(function (require) {
                     React.createElement("div", {className: "row"}, 
                         React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
                             React.createElement(Logger, {onLog: this.onLog}, 
-                                React.createElement(InnerComponent, {test: "123"})
+                                React.createElement(InnerComponent, {title: "Input Field"})
                             )
                         ), 
                         React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
