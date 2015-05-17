@@ -101,6 +101,7 @@ define(function (require) {
 
     var LogComponent = React.createClass({displayName: "LogComponent",
 
+        // using a variable we can keep track of log, even if component is not mounted.
         _logData : [],
 
         componentWillMount : function()
@@ -115,14 +116,24 @@ define(function (require) {
 
         addLog : function(logMsg){
             this._logData.push(logMsg);
+
+            // need to protect here, as we work with events
+            // using events does not guarantee, that component is mounted when event arrives.
             if(this.isMounted()){
                 this.forceUpdate();
             }
         },
 
+        onClear : function(){
+          this._logData = [];
+            this.forceUpdate();
+        },
+
         render : function() {
             return(
                 React.createElement("pre", null, 
+                    React.createElement("button", {type: "button", className: "btn btn-warning", onClick: this.onClear}, "Clear"), 
+                    React.createElement("hr", null), 
                     
                         this._logData.map(function (logItem, index) {
                             return (
