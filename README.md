@@ -2,6 +2,8 @@
 
 A collection of example to demonstrate ReactJS capabalities. It also serves as playground!
 
+Live Demo at https://www.devbutze.com/dojo/reactdemo
+
 This project uses
 
 - requirejs, as AMD dependency resolver (also used for minification)
