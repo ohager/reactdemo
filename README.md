@@ -2,7 +2,7 @@
 
 A collection of example to demonstrate ReactJS capabalities. It also serves as playground!
 
-Live Demo at https://www.devbutze.com/dojo/reactdemo
+Live Demo at https://www.devbutze.com/dojo/react
 
 This project uses
 
