@@ -65,7 +65,8 @@ define(function (require) {
                                         React.createElement("span", {className: "glyphicon glyphicon-record", "aria-hidden": "true"}), " Decorators ", React.createElement("span", {className: "caret"})), 
                                     React.createElement("ul", {className: "dropdown-menu", role: "menu", "aria-labelledby": "dropDecorator"}, 
                                         React.createElement(MenuItem, {link: "decorator.animation", title: "Animation"}), 
-                                        React.createElement(MenuItem, {link: "decorator.logging", title: "Logging"})
+                                        React.createElement(MenuItem, {link: "decorator.logging", title: "Logging"}), 
+                                        React.createElement(MenuItem, {link: "decorator.factory", title: "Decorator Factory"})
                                     )
                                 ), 
 								React.createElement("li", {className: "dropdown"}, 
@@ -75,12 +76,19 @@ define(function (require) {
 										React.createElement(MenuItem, {link: "q", title: "Q"}), 
 										React.createElement(MenuItem, {link: "harmony", title: "Native Promises"})
 									)
-								)
+								), 
+                                React.createElement("li", {className: "dropdown"}, 
+                                    React.createElement("a", {id: "dropFlux", href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", "aria-haspopup": "true", role: "button", "aria-expanded": "false"}, 
+                                        React.createElement("span", {className: "glyphicon glyphicon-retweet", "aria-hidden": "true"}), " Flux ", React.createElement("span", {className: "caret"})), 
+                                    React.createElement("ul", {className: "dropdown-menu", role: "menu", "aria-labelledby": "dropFlux"}, 
+                                        React.createElement(MenuItem, {link: "flux", title: "Simple Flux with Delorean"}), 
+                                        React.createElement(MenuItem, {link: "nanoflux", title: "Simple Flux with Nanoflux"})
+                                    )
+                                )
 							)
 						)
 					)
 				)
-
 			);
 		}
 	});

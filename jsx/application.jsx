@@ -12,9 +12,12 @@ define(	function (require) {
 	var DecoupledCompositionExampleCanvas = require('component/canvas/decoupledcomposition.example.canvas');
 	var DecoratorAnimationExampleCanvas = require('component/canvas/decorator.animation.example.canvas');
     var DecoratorLoggingExampleCanvas = require('component/canvas/decorator.logging.example.canvas');
+    var DecoratorFactoryExampleCanvas = require('component/canvas/factory.decorator.example.canvas');
 	var QPromisesCanvas = require('component/canvas/q.promises.canvas');
 	var Ecma6PromisesCanvas = require('component/canvas/ecma6.promises.canvas');
     var MixinExampleCanvas = require('component/canvas/mixin.example.canvas');
+    var FluxCanvas = require('component/canvas/flux.canvas');
+    var NanoFluxCanvas = require('component/canvas/nanoflux.canvas');
 
 	var RouteHandler = Router.RouteHandler;
 	var Route = Router.Route;
@@ -53,11 +56,17 @@ define(	function (require) {
 			<Route name='decoupledcomposition' path='example/composition/decoupled' handler={DecoupledCompositionExampleCanvas}/>
             <Route name='mixin' path='example/mixin/validation' handler={MixinExampleCanvas}/>
 
-                <Route name='decorator.animation' path='decorator/animation' handler={DecoratorAnimationExampleCanvas}/>
-                <Route name='decorator.logging' path='decorator/logging' handler={DecoratorLoggingExampleCanvas}/>
+            <Route name='decorator.animation' path='decorator/animation' handler={DecoratorAnimationExampleCanvas}/>
+            <Route name='decorator.logging' path='decorator/logging' handler={DecoratorLoggingExampleCanvas}/>
+            <Route name='decorator.factory' path='decorator/factory' handler={DecoratorFactoryExampleCanvas}/>
 
-                <Route name='q' path='promises/q' handler={QPromisesCanvas}/>
-			    <Route name='harmony' path='promises/harmony' handler={Ecma6PromisesCanvas}/>
+
+            <Route name='q' path='promises/q' handler={QPromisesCanvas}/>
+            <Route name='harmony' path='promises/harmony' handler={Ecma6PromisesCanvas}/>
+
+                <Route name='flux' path='flux/simple/delorean' handler={FluxCanvas}/>
+                <Route name='nanoflux' path='flux/simple/nanoflux' handler={NanoFluxCanvas}/>
+
 			<DefaultRoute handler={TwoWayExampleCanvas}/>
 		</Route>
 	);

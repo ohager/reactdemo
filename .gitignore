@@ -3,3 +3,7 @@ node_modules/
 .idea/
 .jsx-cache
 npm-debug.log
+js/qcon/
+qcon.html
+
+

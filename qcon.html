@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+    <title>QCon Examples</title>
+
+	<!-- Core CSS  -->
+	<link rel="stylesheet" href="css/main.css">
+
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/qcon/angular.min.js"></script>
+	<script src="js/qcon/vanilla.js"></script>
+    <script src="js/qcon/person.editor.plugin.js"></script>
+    <script src="js/qcon/person.editor.plugin.js"></script>
+
+    <script src="js/qcon/person.editor.controller.js"></script>
+
+</head>
+
+<body>
+
+<!--
+<div class="row text-center">
+	<form name="person-editor">
+        <h2>Person Editor</h2>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" class="form-control" type="text" onchange="changed(event)"/>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" class="form-control" type="text" onchange="changed(event)"/>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <label for="email">E-Mail</label>
+                    <input id="email" class="form-control" type="text" onchange="changed(event)"/>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success" onclick="save(event)">Save</button>
+    </form>
+</div>
+-->
+
+<!-- jquery Plugin version -->
+<div id="person-editor"></div>
+<script>
+    (function(){
+
+        function save(data){
+            console.log(data);
+        }
+
+        $('#person-editor').personEditor(save);
+    })();
+</script>
+
+<!-- angular naive version -->
+<div class="row text-center" ng-app="app" ng-controller="personeditorController">
+    <form name="person-editor">
+        <h2>Person Editor</h2>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" class="form-control" type="text" ng-model="person.firstName"/>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" class="form-control" type="text" ng-model="person.lastName"/>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <label for="email">E-Mail</label>
+                    <input id="email" class="form-control" type="text" ng-model="person.email"/>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success" ng-click="save($event)">Save</button>
+    </form>
+</div>
+
+</body>
+
+
+
+
+
+</html>

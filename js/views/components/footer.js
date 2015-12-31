@@ -3,13 +3,6 @@ define(function (require) {
 	var React = require('react');
 
 	return React.createClass({
-		getInitialState: function () {
-			return {};
-		},
-
-		componentDidMount: function () {
-		},
-
 		render: function () {
 
 			return (

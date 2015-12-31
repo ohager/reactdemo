@@ -27,15 +27,26 @@ define(function (require) {
         },
 
         operationC: function () {
+
+            function asyncFunc(){ return false; }
             return new Promise(function (resolve, reject) {
                 setInterval(function () {
-                    reject("Operation C failed");
+                    if(asyncFunc()){
+                        resolve("success")
+                    }else{
+                        reject("failed");
+                    }
                 }, 500);
             });
         },
 
 
         componentDidMount: function () {
+
+            if(!Promise){
+                $MessageHandler.showError("Your browse does not support ES6 promises!")
+                return;
+            }
 
             var self = this;
             this.setState({operationResultA: "Executing..."});
@@ -62,6 +73,7 @@ define(function (require) {
 
 
         render: function () {
+
 
             var codeExample = "var promise = new Promise( \n" +
                 "\tfunction(resolve,reject){\n" +

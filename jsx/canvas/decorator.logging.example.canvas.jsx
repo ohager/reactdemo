@@ -6,15 +6,14 @@ define(function (require) {
     var Logger = React.createClass({
 
         // function backup store
-        funcStore : {
-            didUpdate : undefined,
-            willUpdate : undefined
+        funcStore: {
+            didUpdate: undefined,
+            willUpdate: undefined
         },
 
-        propTypes : {
-            onLog : React.PropTypes.func
+        propTypes: {
+            onLog: React.PropTypes.func
         },
-
 
 
         createTimestamp: function () {
@@ -25,7 +24,7 @@ define(function (require) {
         log: function (fname, msg) {
             // simple console logger... but we could extend it at our will, i.e using IndexedDB, or LocalStorage
             var logMsg = 'L[' + this.createTimestamp() + '] ' + fname;
-            if(msg){
+            if (msg) {
                 logMsg += ': ' + msg;
             }
             console.log(logMsg);
@@ -81,7 +80,11 @@ define(function (require) {
 
         render: function () {
             // we have no own rendering...
-            return this.props.children;
+            return (
+                <div>
+                    {this.props.children}
+                </div>
+            )
         }
     });
 
@@ -89,8 +92,8 @@ define(function (require) {
 
         // this component does not have any outer relation with our logger!
 
-        propTypes : {
-            title : React.PropTypes.string.isRequired
+        propTypes: {
+            title: React.PropTypes.string.isRequired
         },
 
         getInitialState: function () {
@@ -121,35 +124,33 @@ define(function (require) {
     var LogComponent = React.createClass({
 
         // using a variable we can keep track of log, even if component is not mounted.
-        _logData : [],
+        _logData: [],
 
-        componentWillMount : function()
-        {
+        componentWillMount: function () {
             Event.addListener('addLog', this.addLog);
         },
 
-        componentWillUnmount : function()
-        {
+        componentWillUnmount: function () {
             Event.removeListener('addLog', this.addLog);
         },
 
-        addLog : function(logMsg){
+        addLog: function (logMsg) {
             this._logData.push(logMsg);
 
             // need to protect here, as we work with events
             // using events does not guarantee, that component is mounted when event arrives.
-            if(this.isMounted()){
+            if (this.isMounted()) {
                 this.forceUpdate();
             }
         },
 
-        onClear : function(){
-          this._logData = [];
+        onClear: function () {
+            this._logData = [];
             this.forceUpdate();
         },
 
-        render : function() {
-            return(
+        render: function () {
+            return (
                 <pre>
                     <button type="button" className="btn btn-warning" onClick={this.onClear}>Clear</button>
                     <hr/>
@@ -182,6 +183,7 @@ define(function (require) {
                     <div className="row">
                         <div className="col-xs-6 col-sm-6">
                             <h2>Example of Logging Decorator</h2>
+
                             <p>This example shows how to use the decorator pattern in ReactJS for logging purposes.</p>
                             <hr/>
                         </div>
@@ -190,6 +192,8 @@ define(function (require) {
                         <div className="col-xs-6 col-sm-6">
                             <Logger onLog={this.onLog}>
                                 <InnerComponent title="Input Field"/>
+
+                                <p>Test</p>
                             </Logger>
                         </div>
                         <div className="col-xs-6 col-sm-6">

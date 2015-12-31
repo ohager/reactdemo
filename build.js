@@ -19,7 +19,8 @@
         component: '../views/components',
         jquery : 'jquery',
         jqueryMask : 'jquery.inputmask.bundle.min',
-        common: '../app/common'
+        common: '../app/common',
+        nanoflux: '../../node_modules/nanoflux/dist/nanoflux.min'
     },
     dir: './release-build',
         modules : [

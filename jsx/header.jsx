@@ -66,6 +66,7 @@ define(function (require) {
                                     <ul className="dropdown-menu" role="menu" aria-labelledby="dropDecorator">
                                         <MenuItem link="decorator.animation" title="Animation" />
                                         <MenuItem link="decorator.logging" title="Logging" />
+                                        <MenuItem link="decorator.factory" title="Decorator Factory" />
                                     </ul>
                                 </li>
 								<li className="dropdown">
@@ -76,11 +77,18 @@ define(function (require) {
 										<MenuItem link="harmony" title="Native Promises" />
 									</ul>
 								</li>
+                                <li className="dropdown">
+                                    <a id="dropFlux" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                        <span className= "glyphicon glyphicon-retweet" aria-hidden="true"></span> Flux <span className="caret"></span></a>
+                                    <ul className="dropdown-menu" role="menu" aria-labelledby="dropFlux">
+                                        <MenuItem link="flux" title="Simple Flux with Delorean" />
+                                        <MenuItem link="nanoflux" title="Simple Flux with Nanoflux" />
+                                    </ul>
+                                </li>
 							</ul>
 						</div>
 					</div>
 				</nav>
-
 			);
 		}
 	});

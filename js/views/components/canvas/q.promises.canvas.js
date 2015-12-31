@@ -33,11 +33,11 @@ define(function(require){
             },
 
             asyncOperationA: function () {
-                var deferred = Q.defer();
-                setTimeout(function () {
-                    deferred.resolve("Operation A Done!");
-                }, 2500);
-                return deferred.promise;
+                return Q.Promise( function(resolve, reject, notify){
+                    setTimeout(function () {
+                        resolve("Operation A Done!");
+                    }, 2500);
+                });
             },
 
             asyncOperationB: function () {
