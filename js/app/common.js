@@ -12,7 +12,7 @@ requirejs.config({
         eventemitter: 'eventemitter.min',
         jquery : 'jquery',
         jqueryMask : 'jquery.inputmask.bundle.min',
-        nanoflux: '../../node_modules/nanoflux/dist/nanoflux.min'
+        nanoflux: 'nanoflux.min'
     },
     waitSeconds: 20,
     shim: {
