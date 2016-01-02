@@ -81,8 +81,8 @@ define(function (require) {
                                     React.createElement("a", {id: "dropFlux", href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", "aria-haspopup": "true", role: "button", "aria-expanded": "false"}, 
                                         React.createElement("span", {className: "glyphicon glyphicon-retweet", "aria-hidden": "true"}), " Flux ", React.createElement("span", {className: "caret"})), 
                                     React.createElement("ul", {className: "dropdown-menu", role: "menu", "aria-labelledby": "dropFlux"}, 
-                                        React.createElement(MenuItem, {link: "flux", title: "Simple Flux with Delorean"}), 
-                                        React.createElement(MenuItem, {link: "nanoflux", title: "Simple Flux with Nanoflux"})
+                                        React.createElement(MenuItem, {link: "nanoflux", title: "Simple Flux with Nanoflux"}), 
+                                        React.createElement(MenuItem, {link: "fluxsimulator", title: "Flux Simulator"})
                                     )
                                 )
 							)

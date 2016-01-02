@@ -6,17 +6,17 @@ define(function (require) {
     // setting up Flux
     var dispatcher = NanoFlux.createDispatcher('dispatcher');
     var todoStore = NanoFlux.createStore('todoStore', {
-        _todos : [],
+        _users : [],
         onAddTodo : function(todoItem){
-            this._todos.push(todoItem);
+            this._users.push(todoItem);
             this._propagateChanges();
         },
         onRemoveTodo : function(todoId){
-            this._todos.splice(todoId, 1);
+            this._users.splice(todoId, 1);
             this._propagateChanges();
         },
         _propagateChanges : function(){
-            this.notify(this._todos);
+            this.notify(this._users);
         }
     });
 
@@ -51,6 +51,7 @@ define(function (require) {
 
       return React.createClass({
 
+            CanvasUrl : window.Global.githubSourcePath + '/nanoflux.canvas.js',
             todoActions : NanoFlux.getActions('todoActions'),
             todoStore : NanoFlux.getStore('todoStore'),
 
@@ -89,12 +90,14 @@ define(function (require) {
 
             render: function () {
 
+
                 return (
                     React.createElement("div", null, 
                         React.createElement("div", {className: "row"}, 
                             React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
                                 React.createElement("h2", null, "Example of using Flux"), 
                                 React.createElement("p", null, "This example shows the Flux Architecture Concept implemented using ", React.createElement("a", {href: "https://github.com/ohager/nanoflux"}, "Nanoflux")), 
+                                React.createElement("a", {href: this.CanvasUrl, target: "_blank"}, "Code"), 
                                 React.createElement("hr", null)
                             )
                         ), 

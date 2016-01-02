@@ -81,8 +81,8 @@ define(function (require) {
                                     <a id="dropFlux" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                                         <span className= "glyphicon glyphicon-retweet" aria-hidden="true"></span> Flux <span className="caret"></span></a>
                                     <ul className="dropdown-menu" role="menu" aria-labelledby="dropFlux">
-                                        <MenuItem link="flux" title="Simple Flux with Delorean" />
                                         <MenuItem link="nanoflux" title="Simple Flux with Nanoflux" />
+                                        <MenuItem link="fluxsimulator" title="Flux Simulator" />
                                     </ul>
                                 </li>
 							</ul>

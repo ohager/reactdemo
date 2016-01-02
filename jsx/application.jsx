@@ -16,8 +16,8 @@ define(	function (require) {
 	var QPromisesCanvas = require('component/canvas/q.promises.canvas');
 	var Ecma6PromisesCanvas = require('component/canvas/ecma6.promises.canvas');
     var MixinExampleCanvas = require('component/canvas/mixin.example.canvas');
-    var FluxCanvas = require('component/canvas/flux.canvas');
     var NanoFluxCanvas = require('component/canvas/nanoflux.canvas');
+    var FluxSimulatorCanvas = require('component/canvas/fluxsimulator.canvas');
 
 	var RouteHandler = Router.RouteHandler;
 	var Route = Router.Route;
@@ -64,8 +64,8 @@ define(	function (require) {
             <Route name='q' path='promises/q' handler={QPromisesCanvas}/>
             <Route name='harmony' path='promises/harmony' handler={Ecma6PromisesCanvas}/>
 
-                <Route name='flux' path='flux/simple/delorean' handler={FluxCanvas}/>
                 <Route name='nanoflux' path='flux/simple/nanoflux' handler={NanoFluxCanvas}/>
+                <Route name='fluxsimulator' path='flux/simulator' handler={FluxSimulatorCanvas}/>
 
 			<DefaultRoute handler={TwoWayExampleCanvas}/>
 		</Route>
