@@ -9,10 +9,16 @@ define(function (require) {
 
         propTypes: {
             name: React.PropTypes.string.isRequired,
-            value: React.PropTypes.any.isRequired
+            value: React.PropTypes.any.isRequired,
+            editable : React.PropTypes.bool
+        },
+
+        onEdit : function(){
+            console.log("onEdit: implement me!")
         },
 
         render: function () {
+            var isEditable = this.props.editable !== undefined ? this.props.editable : true;
             return (
                 <li className="list-group-item">
                     <div className="row">
@@ -23,6 +29,10 @@ define(function (require) {
                     <div className="row">
                         <div className="col-lg-12">
                             <strong>{this.props.value}</strong>
+                            {isEditable ?
+                                <span className="glyphicon glyphicon-pencil" aria-hidden="true" onClick={this.onEdit}/>
+                                : null
+                                }
                         </div>
                     </div>
                 </li>
@@ -55,7 +65,7 @@ define(function (require) {
             return (
                 !this.state.selectedUser ?
                     <ul ref="list" className="list-group">
-                        <UserDetailItem name="" value="Please select a user"/>
+                        <UserDetailItem name="" value="Please select a user" editable={false}/>
                     </ul>
                         :
                     <ul ref="list" className="list-group">
