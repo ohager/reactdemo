@@ -4,6 +4,7 @@ define(function (require) {
 
     var UserList = require('component/fluxsimulator/userlist');
     var UserDetail = require('component/fluxsimulator/userdetail');
+    var ActionIndicator = require('component/fluxsimulator/action.indicator');
 
     var React = require('react');
     var NanoFlux = require('nanoflux');
@@ -28,6 +29,7 @@ define(function (require) {
 
                 return (
                     <div>
+                        <ActionIndicator/>
                         <div className="row">
                             <div className="col-xs-6 col-sm-6">
                                 <h2>Flux Simulator</h2>

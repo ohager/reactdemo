@@ -90,7 +90,6 @@ define(function (require) {
 
             render: function () {
 
-
                 return (
                     React.createElement("div", null, 
                         React.createElement("div", {className: "row"}, 

@@ -1,6 +1,9 @@
 define(function (require) {
 
     var NanoFlux = require('nanoflux');
+    var userStoreDesc = require('component/fluxsimulator/user.store');
+    var visualizationStoreDesc = require('component/fluxsimulator/visualization.store');
+
 
     var dispatcher = NanoFlux.getDispatcher('simulatorDispatcher');
 
@@ -8,76 +11,28 @@ define(function (require) {
 
     dispatcher = NanoFlux.createDispatcher('simulatorDispatcher');
 
-    var userStore = NanoFlux.createStore('userStore', {
-        _users : [],
-        _selectedUser : null,
-        _propagateChanges: function () {
-            this.notify(this._users, this._selectedUser);
+    /* simulation context */
+    dispatcher.connectTo(NanoFlux.createStore('visualizationStore', visualizationStoreDesc));
+    var visualizationActions = NanoFlux.createActions('visualizationActions', dispatcher, {
+        _generateHandlerName : function(actionName) {
+            return "on" + actionName[0].toUpperCase() + actionName.substr(1);
         },
-        onInit : function(){
-            this._users = [
-                {
-                    id : 1,
-                    name : 'ohager',
-                    firstName : 'Oliver',
-                    lastName : 'Häger'
-                },
-                {
-                    id : 2,
-                    name : 'danger',
-                    firstName : 'Austin',
-                    lastName : 'Powers'
-                }];
-            this._propagateChanges();
-        },
-        onAddUser: function (user) {
-            this._users.push(user);
-            this._propagateChanges();
-        },
-        onRemoveUser: function (userId) {
-            this._users.splice(userId, 1);
-            this._propagateChanges();
-        },
-        onUpdateUser: function (updatedUser) {
-            var index = this._users.findIndex( function(user){
-                return user.id === updatedUser.id;
-            });
-            if(index !== -1){
-                this._users[index] = updatedUser;
-                this._propagateChanges();
-            }
-        },
-        getUserById: function(userId){
-            var index = this._users.findIndex( function(user){
-                return user.id === userId;
-            });
-            if(index !== -1){
-                return this._users[index];
-            }
-        },
-        getSelectedUser : function(){
-            var selectedUserId = this._selectedUser;
-            var index = this._users.findIndex( function(user){
-                return user.id === selectedUserId;
-            });
-            return index === -1 ? null : this._users[index];
-        },
-        onSelectUser : function(selectedUserId){
-            var index = this._users.findIndex( function(user){
-                return user.id === selectedUserId;
-            });
 
-            if(index !== -1){
-                this._selectedUser = this._users[index];
-                this._propagateChanges();
-            }
+        triggerAction : function(actionName, payload){
+            var actionContext = {
+                name : actionName,
+                storeName : this._generateHandlerName(actionName),
+                payload: payload
+            };
+            this.dispatch('triggerAction', actionContext);
         }
     });
 
-    dispatcher.connectTo(userStore);
-
+    /* user context */
+    dispatcher.connectTo(NanoFlux.createStore('userStore', userStoreDesc));
     NanoFlux.createActions('userActions', dispatcher, {
         addUser : function(user){
+            visualizationActions.triggerAction('addUser', user);
             this.dispatch('addUser', user);
         },
         removeUser : function(userId){
@@ -90,7 +45,11 @@ define(function (require) {
             this.dispatch('init');
         },
         selectUser : function(userId){
+            visualizationActions.triggerAction('selectUser', userId);
             this.dispatch('selectUser', userId);
         }
     });
+
+
+
 });

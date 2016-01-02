@@ -90,7 +90,6 @@ define(function (require) {
 
             render: function () {
 
-
                 return (
                     <div>
                         <div className="row">
