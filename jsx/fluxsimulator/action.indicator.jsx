@@ -7,7 +7,7 @@ define(function (require) {
     return React.createClass({
 
         visualizationStore: NanoFlux.getStore('visualizationStore'),
-        userActions: NanoFlux.getActions('visualizationActions'),
+        visualizationActions: NanoFlux.getActions('visualizationActions'),
         _subscription: null,
         _mousepos: {
             x: 0,
@@ -26,7 +26,9 @@ define(function (require) {
         },
 
         onActionTriggered: function (action) {
-            this.setState({actionName: action.name, mousepos: this._mousepos, show: true});
+            if(this.isMounted()) {
+                this.setState({actionName: action.name, mousepos: this._mousepos, show: true});
+            }
         },
 
         componentWillMount: function () {

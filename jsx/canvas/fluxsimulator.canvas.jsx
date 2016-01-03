@@ -5,24 +5,24 @@ define(function (require) {
     var UserList = require('component/fluxsimulator/userlist');
     var UserDetail = require('component/fluxsimulator/userdetail');
     var ActionIndicator = require('component/fluxsimulator/action.indicator');
+    var DispatcherViewer = require('component/fluxsimulator/dispatcher.viewer');
+    var UserStoreViewer = require('component/fluxsimulator/user.store.viewer');
 
     var React = require('react');
     var NanoFlux = require('nanoflux');
 
           return React.createClass({
 
-            UserActions :  NanoFlux.getActions('userActions'),
             CanvasUrl : window.Global.githubSourcePath + '/fluxsimulator.canvas.js',
 
             getInitialState: function () {
-                return {selectedUser: null}
+                return {};
             },
 
             componentWillMount: function(){
             },
 
             componentDidMount : function(){
-                this.UserActions.initUsers();
             },
 
             render: function () {
@@ -31,13 +31,22 @@ define(function (require) {
                     <div>
                         <ActionIndicator/>
                         <div className="row">
-                            <div className="col-xs-6 col-sm-6">
+                            <div className="col-xs-12 col-sm-12">
                                 <h2>Flux Simulator</h2>
                                 <p>This example visualizes the Data Flow in a Flux Architecture.</p>
                                 <a href={this.CanvasUrl} target="_blank">Code</a>
                                 <hr/>
                             </div>
                         </div>
+                        <div className="row">
+                            <div className="col-xs-6 col-sm-6">
+                                <DispatcherViewer/>
+                            </div>
+                            <div className="col-xs-6 col-sm-6">
+                                <UserStoreViewer/>
+                            </div>
+                        </div>
+                        <hr/>
                         <div className="row">
                             <div className="col-xs-6 col-sm-6">
                                 <UserList/>

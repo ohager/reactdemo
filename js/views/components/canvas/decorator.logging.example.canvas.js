@@ -191,9 +191,7 @@ define(function (require) {
                     React.createElement("div", {className: "row"}, 
                         React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
                             React.createElement(Logger, {onLog: this.onLog}, 
-                                React.createElement(InnerComponent, {title: "Input Field"}), 
-
-                                React.createElement("p", null, "Test")
+                                React.createElement(InnerComponent, {title: "Input Field"})
                             )
                         ), 
                         React.createElement("div", {className: "col-xs-6 col-sm-6"}, 

@@ -192,8 +192,6 @@ define(function (require) {
                         <div className="col-xs-6 col-sm-6">
                             <Logger onLog={this.onLog}>
                                 <InnerComponent title="Input Field"/>
-
-                                <p>Test</p>
                             </Logger>
                         </div>
                         <div className="col-xs-6 col-sm-6">

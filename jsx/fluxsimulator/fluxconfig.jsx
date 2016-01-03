@@ -41,9 +41,6 @@ define(function (require) {
         updateUser : function(updatedUser){
             this.dispatch('updateUser', updatedUser);
         },
-        initUsers : function(){
-            this.dispatch('init');
-        },
         selectUser : function(userId){
             visualizationActions.triggerAction('selectUser', userId);
             this.dispatch('selectUser', userId);

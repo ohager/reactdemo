@@ -1,27 +1,22 @@
 define(function (require) {
 
     return {
-        _users : [],
+        _users : [
+            {
+                id : 1,
+                name : 'ohager',
+                firstName : 'Oliver',
+                lastName : 'Häger'
+            },
+            {
+                id : 2,
+                name : 'danger',
+                firstName : 'Austin',
+                lastName : 'Powers'
+            }],
         _selectedUser : null,
         _propagateChanges: function () {
             this.notify(this._users, this._selectedUser);
-        },
-        onInit : function(){
-            if(this._users.length > 0) return;
-            this._users = [
-                {
-                    id : 1,
-                    name : 'ohager',
-                    firstName : 'Oliver',
-                    lastName : 'Häger'
-                },
-                {
-                    id : 2,
-                    name : 'danger',
-                    firstName : 'Austin',
-                    lastName : 'Powers'
-                }];
-            this._propagateChanges();
         },
         onAddUser: function (user) {
             this._users.push(user);
@@ -64,6 +59,10 @@ define(function (require) {
                 this._selectedUser = this._users[index];
                 this._propagateChanges();
             }
+        },
+        getUserList : function(){
+            return this._users.slice(); // get copy - immutable
         }
+
     }
 });

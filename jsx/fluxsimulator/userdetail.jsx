@@ -58,7 +58,9 @@ define(function (require) {
         },
 
         onSelectedUser : function(users, selectedUser){
-            this.setState({selectedUser:selectedUser});
+            if(this.isMounted()) {
+                this.setState({selectedUser: selectedUser});
+            }
         },
 
         mountDetailList: function () {

@@ -31,14 +31,16 @@ define(function (require) {
     return React.createClass({
 
         userStore: NanoFlux.getStore('userStore'),
-        userActions : NanoFlux.getActions('userActions'),
+        visualizationActions : NanoFlux.getActions('userActions'),
 
         getInitialState: function () {
-            return {text: '', userItems: []}
+            return {text: '', userItems: this.userStore.getUserList()}
         },
 
         onUsersChanged: function (userList) {
-            this.setState({userItems: userList});
+            if(this.isMounted()) {
+                this.setState({userItems: userList});
+            }
         },
 
         componentWillMount: function () {
@@ -55,7 +57,7 @@ define(function (require) {
         },
 
         selectItem : function(userId){
-            this.userActions.selectUser(userId);
+            this.visualizationActions.selectUser(userId);
         },
 
         render: function () {
