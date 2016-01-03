@@ -39,6 +39,7 @@ define(function (require) {
             this.dispatch('removeUser', userId);
         },
         updateUser : function(updatedUser){
+            visualizationActions.triggerAction('updateUser', updatedUser);
             this.dispatch('updateUser', updatedUser);
         },
         selectUser : function(userId){
