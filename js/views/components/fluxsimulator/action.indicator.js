@@ -1,54 +1,42 @@
 define(function (require) {
 
-    require('component/fluxsimulator/fluxconfig');
     var React = require('react');
-    var NanoFlux = require('nanoflux');
 
     return React.createClass({
 
-        visualizationStore: NanoFlux.getStore('visualizationStore'),
-        visualizationActions: NanoFlux.getActions('visualizationActions'),
-        _subscription: null,
-        _mousepos: {
-            x: 0,
-            y: 0
-        },
-
-        updateMousePosition: function (mouseEvent) {
-            this._mousepos = {
-                x: mouseEvent.pageX,
-                y: mouseEvent.pageY
-            };
+        propTypes : {
+            name : React.PropTypes.string.isRequired,
+            position : React.PropTypes.shape({
+                x: React.PropTypes.number.isRequired,
+                y: React.PropTypes.number.isRequired
+            }).isRequired,
+            onAnimationEnd : React.PropTypes.func
         },
 
         getInitialState: function () {
-            return {actionName: '', mousepos: this._mousepos, show: false}
-        },
-
-        onActionTriggered: function (action) {
-            if(this.isMounted()) {
-                this.setState({actionName: action.name, mousepos: this._mousepos, show: true});
-            }
+            return {show: true}
         },
 
         componentWillMount: function () {
-            this.visualizationStore.subscribe(this, this.onActionTriggered);
         },
 
         componentDidMount: function () {
-            window.addEventListener('mousedown', this.updateMousePosition);
+
+            if(!this.refs.indicator) return;
+
             var indicator = this.refs.indicator.getDOMNode();
             indicator.addEventListener("animationend", function () {
+                indicator.removeEventListener("animationend");
                 this.setState({show: false});
+                if(this.props.onAnimationEnd) {
+                    this.props.onAnimationEnd()
+                }
             }.bind(this), false);
-
         },
 
         componentWillUnmount: function () {
-            if (this._subscription) {
-                this._subscription.unsubscribe();
-            }
-            window.removeEventListener('mousedown', this.updateMousePosition);
+
+            if(!this.refs.indicator) return;
 
             var indicator = this.refs.indicator.getDOMNode();
             indicator.removeEventListener("animationend");
@@ -58,20 +46,18 @@ define(function (require) {
 
             var divStyle = {
                 backgroundColor: 'rgba(128,0,0,0.5)',
-                top: this.state.mousepos.y - 30 + 'px',
-                left: this.state.mousepos.x - 30 + 'px'
+                top: this.props.position.y - 30 + 'px',
+                left: this.props.position.x - 30 + 'px'
             };
 
             var classes = "action-indicator";
 
             return (
-                React.createElement("div", {ref: "indicator"}, 
                     this.state.show ?
-                    React.createElement("div", {className: classes, style: divStyle}, 
-                        React.createElement("small", null, this.state.actionName)
+                    React.createElement("div", {ref: "indicator", className: classes, style: divStyle}, 
+                        React.createElement("small", null, this.props.name)
                     )
                         :null
-                )
             )
         }
     })

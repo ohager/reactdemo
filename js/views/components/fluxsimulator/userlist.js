@@ -31,7 +31,7 @@ define(function (require) {
     return React.createClass({
 
         userStore: NanoFlux.getStore('userStore'),
-        visualizationActions : NanoFlux.getActions('userActions'),
+        userActions : NanoFlux.getActions('userActions'),
 
         getInitialState: function () {
             return {text: '', userItems: this.userStore.getUserList()}
@@ -50,14 +50,19 @@ define(function (require) {
         componentDidMount: function () {
         },
 
+        componentWillUnmount: function () {
+        },
+
+
         addItem: function (event) {
         },
 
         removeItem: function (id) {
+            console.log("removeItem: Implement me!");
         },
 
         selectItem : function(userId){
-            this.visualizationActions.selectUser(userId);
+            this.userActions.selectUser(userId);
         },
 
         render: function () {

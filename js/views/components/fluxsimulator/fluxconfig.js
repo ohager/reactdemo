@@ -3,11 +3,21 @@ define(function (require) {
     var NanoFlux = require('nanoflux');
     var userStoreDesc = require('component/fluxsimulator/user.store');
     var visualizationStoreDesc = require('component/fluxsimulator/visualization.store');
-
-
     var dispatcher = NanoFlux.getDispatcher('simulatorDispatcher');
 
+
+
     if (dispatcher) return;
+
+    var Mouse = {
+        clickposition : { x: 0 , y: 0 }
+    }
+    window.addEventListener('mousedown', function(e){
+        Mouse.clickposition.x = e.pageX;
+        Mouse.clickposition.y = e.pageY;
+    });
+
+
 
     dispatcher = NanoFlux.createDispatcher('simulatorDispatcher');
 
@@ -22,7 +32,8 @@ define(function (require) {
             var actionContext = {
                 name : actionName,
                 storeName : this._generateHandlerName(actionName),
-                payload: payload
+                payload: payload,
+                pos: Mouse.clickposition
             };
             this.dispatch('triggerAction', actionContext);
         }
@@ -36,6 +47,7 @@ define(function (require) {
             this.dispatch('addUser', user);
         },
         removeUser : function(userId){
+            visualizationActions.triggerAction('removeUser', userId);
             this.dispatch('removeUser', userId);
         },
         updateUser : function(updatedUser){

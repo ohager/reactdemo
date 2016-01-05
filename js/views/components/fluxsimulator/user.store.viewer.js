@@ -8,7 +8,7 @@ define(function (require) {
 
         visualizationStore: NanoFlux.getStore('visualizationStore'),
         userStore: NanoFlux.getStore('userStore'),
-        visualizationActions: NanoFlux.getActions('visualizationActions'),
+        userActions: NanoFlux.getActions('visualizationActions'),
         _subscription: null,
 
 

@@ -4,6 +4,7 @@ define(function (require) {
 
     var UserList = require('component/fluxsimulator/userlist');
     var UserDetail = require('component/fluxsimulator/userdetail');
+    var VisualizationContainer = require('component/fluxsimulator/visualization.container');
     var ActionIndicator = require('component/fluxsimulator/action.indicator');
     var DispatcherViewer = require('component/fluxsimulator/dispatcher.viewer');
     var UserStoreViewer = require('component/fluxsimulator/user.store.viewer');
@@ -29,7 +30,8 @@ define(function (require) {
 
                 return (
                     <div>
-                        <ActionIndicator/>
+                        <VisualizationContainer/>
+
                         <div className="row">
                             <div className="col-xs-12 col-sm-12">
                                 <h2>Flux Simulator</h2>

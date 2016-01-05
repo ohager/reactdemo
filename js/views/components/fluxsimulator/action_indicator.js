@@ -7,7 +7,7 @@ define(function (require) {
     return React.createClass({
 
         visualizationStore: NanoFlux.getStore('simulationStore'),
-        visualizationActions : NanoFlux.getActions('userActions'),
+        userActions : NanoFlux.getActions('userActions'),
 
         getInitialState: function () {
             return {actionName: ''}
@@ -31,7 +31,7 @@ define(function (require) {
         },
 
         selectItem : function(userId){
-            this.visualizationActions.selectUser(userId);
+            this.userActions.selectUser(userId);
         },
 
         render: function () {

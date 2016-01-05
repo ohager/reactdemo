@@ -4,6 +4,7 @@ define(function (require) {
 
     var UserList = require('component/fluxsimulator/userlist');
     var UserDetail = require('component/fluxsimulator/userdetail');
+    var VisualizationContainer = require('component/fluxsimulator/visualization.container');
     var ActionIndicator = require('component/fluxsimulator/action.indicator');
     var DispatcherViewer = require('component/fluxsimulator/dispatcher.viewer');
     var UserStoreViewer = require('component/fluxsimulator/user.store.viewer');
@@ -29,7 +30,8 @@ define(function (require) {
 
                 return (
                     React.createElement("div", null, 
-                        React.createElement(ActionIndicator, null), 
+                        React.createElement(VisualizationContainer, null), 
+
                         React.createElement("div", {className: "row"}, 
                             React.createElement("div", {className: "col-xs-12 col-sm-12"}, 
                                 React.createElement("h2", null, "Flux Simulator"), 

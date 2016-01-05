@@ -7,7 +7,7 @@ define(function (require) {
     return React.createClass({
 
         visualizationStore: NanoFlux.getStore('visualizationStore'),
-        visualizationActions: NanoFlux.getActions('visualizationActions'),
+        userActions: NanoFlux.getActions('visualizationActions'),
         _subscription: null,
 
         getInitialState: function () {
