@@ -3,7 +3,7 @@ define(function (require) {
     require('component/fluxsimulator/fluxconfig');
     var React = require('react');
     var NanoFlux = require('nanoflux');
-    var ActionIndicator = require('component/fluxsimulator/action.indicator');
+    var ClickIndicator = require('component/fluxsimulator/click.indicator');
 
     return React.createClass({
 
@@ -40,7 +40,7 @@ define(function (require) {
 
             return (
                 <div>{
-                        this.state.action ? <ActionIndicator name={this.state.action.name} position={this.state.action.pos} onAnimationEnd={this.removeIndicator}/> : null
+                        this.state.action ? <ClickIndicator name={this.state.action.name} position={this.state.action.pos} onAnimationEnd={this.removeIndicator}/> : null
                     }
                 </div>
             )

@@ -28,6 +28,10 @@ define(function (require) {
 
             render: function () {
 
+                var fixedHeightStyle = {
+                    height: '300px'
+                };
+
                 return (
                     React.createElement("div", null, 
                         React.createElement(VisualizationContainer, null), 
@@ -40,7 +44,7 @@ define(function (require) {
                                 React.createElement("hr", null)
                             )
                         ), 
-                        React.createElement("div", {className: "row"}, 
+                        React.createElement("div", {className: "row", style: fixedHeightStyle}, 
                             React.createElement("div", {className: "col-xs-6 col-sm-6"}, 
                                 React.createElement(DispatcherViewer, null)
                             ), 

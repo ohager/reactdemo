@@ -1,6 +1,7 @@
 define(function (require) {
 
     var React = require('react');
+    var Snabbt = require('snabbt');
 
     return React.createClass({
 
@@ -25,36 +26,40 @@ define(function (require) {
             if(!this.refs.indicator) return;
 
             var indicator = this.refs.indicator.getDOMNode();
-            indicator.addEventListener("animationend", function () {
-                indicator.removeEventListener("animationend");
-                this.setState({show: false});
-                if(this.props.onAnimationEnd) {
-                    this.props.onAnimationEnd()
-                }
-            }.bind(this), false);
+
+            Snabbt(indicator, {
+                scale : [2.0,2.0],
+                opacity: 0.0,
+                fromOpacity: 1.0,
+                duration: 250,
+                easing: 'ease',
+                allDone: function(){
+                    this.setState({show: false});
+                    if(this.props.onAnimationEnd) {
+                        this.props.onAnimationEnd();
+                    }
+                }.bind(this)
+            })
+
         },
 
         componentWillUnmount: function () {
 
             if(!this.refs.indicator) return;
 
-            var indicator = this.refs.indicator.getDOMNode();
-            indicator.removeEventListener("animationend");
-
         },
         render: function () {
 
             var divStyle = {
-                backgroundColor: 'rgba(128,0,0,0.5)',
                 top: this.props.position.y - 30 + 'px',
                 left: this.props.position.x - 30 + 'px'
             };
 
-            var classes = "action-indicator";
+            var classes = "click-indicator";
 
             return (
                     this.state.show ?
-                    <div ref="indicator" className={classes} style={divStyle}>
+                    <div ref="indicator" className="click-indicator" style={divStyle}>
                         <small>{this.props.name}</small>
                     </div>
                         :null

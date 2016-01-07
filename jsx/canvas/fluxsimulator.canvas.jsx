@@ -28,6 +28,10 @@ define(function (require) {
 
             render: function () {
 
+                var fixedHeightStyle = {
+                    height: '300px'
+                };
+
                 return (
                     <div>
                         <VisualizationContainer/>
@@ -40,7 +44,7 @@ define(function (require) {
                                 <hr/>
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row" style={fixedHeightStyle}>
                             <div className="col-xs-6 col-sm-6">
                                 <DispatcherViewer/>
                             </div>

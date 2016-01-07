@@ -1,6 +1,7 @@
 define(function (require) {
 
     var React = require('react');
+    var Snabbt = require('snabbt');
 
     return React.createClass({
 
@@ -25,21 +26,24 @@ define(function (require) {
             if(!this.refs.indicator) return;
 
             var indicator = this.refs.indicator.getDOMNode();
-            indicator.addEventListener("animationend", function () {
-                indicator.removeEventListener("animationend");
-                this.setState({show: false});
-                if(this.props.onAnimationEnd) {
-                    this.props.onAnimationEnd()
-                }
-            }.bind(this), false);
+            Snabbt(indicator, {
+                scale : [2.0,2.0],
+                opacity: 0.0,
+                fromOpacity: 1.0,
+                duration: 250,
+                easing: 'ease',
+                allDone: function(){
+                    this.setState({show: false});
+                    if(this.props.onAnimationEnd) {
+                        this.props.onAnimationEnd();
+                    }
+                }.bind(this)
+            })
         },
 
         componentWillUnmount: function () {
 
             if(!this.refs.indicator) return;
-
-            var indicator = this.refs.indicator.getDOMNode();
-            indicator.removeEventListener("animationend");
 
         },
         render: function () {
@@ -54,7 +58,7 @@ define(function (require) {
 
             return (
                     this.state.show ?
-                    React.createElement("div", {ref: "indicator", className: classes, style: divStyle}, 
+                    React.createElement("div", {ref: "indicator", className: "action-indicator", style: divStyle}, 
                         React.createElement("small", null, this.props.name)
                     )
                         :null
