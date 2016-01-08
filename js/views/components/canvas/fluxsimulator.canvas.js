@@ -44,6 +44,7 @@ define(function (require) {
                             React.createElement("div", {className: "col-xs-12 col-sm-12"}, 
                                 React.createElement("h2", null, "Flux Simulator"), 
                                 React.createElement("p", null, "This example visualizes the Data Flow in a Flux Architecture."), 
+                                React.createElement("h4", null, "Still in development!!"), 
                                 React.createElement("a", {href: this.CanvasUrl, target: "_blank"}, "Code"), 
                                 React.createElement("hr", null)
                             )
