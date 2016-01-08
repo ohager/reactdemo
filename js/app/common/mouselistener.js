@@ -21,8 +21,10 @@ define(function(){
         }
     }
 
-    window.MouseListener = window.MouseListener || new MouseListener();
+    window.Global = window.Global || {};
 
-    return window.MouseListener;
+    window.Global.MouseListener = window.Global.MouseListener || new MouseListener();
+
+    return window.Global.MouseListener;
 
 });

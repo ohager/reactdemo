@@ -26,6 +26,7 @@ define(function (require) {
             if(!this.refs.indicator) return;
 
             var indicator = this.refs.indicator.getDOMNode();
+
             Snabbt(indicator, {
                 scale : [2.0,2.0],
                 opacity: 0.0,
@@ -39,6 +40,7 @@ define(function (require) {
                     }
                 }.bind(this)
             })
+
         },
 
         componentWillUnmount: function () {

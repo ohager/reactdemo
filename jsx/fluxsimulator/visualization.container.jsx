@@ -12,7 +12,7 @@ define(function (require) {
         _subscription: null,
 
         getInitialState: function () {
-            return { actions : [] }
+            return { actions : [],  }
         },
 
         onActionTriggered: function (action) {
@@ -33,8 +33,23 @@ define(function (require) {
         componentWillUnmount: function () {
         },
 
-        removeIndicator : function(){
-            //this.setState( {action : null} );
+        removeIndicator : function(id){
+            // cleaning up the DOM -- still buggy!
+            /*
+            var actions = this.state.actions;
+            for(var i = 0; i<actions.length; ++i){
+                if(actions[i].id === id)
+                {
+                    actions.splice(i,1);
+                    this.state.actions = actions;
+                    // update only if no action is visible anymore
+                    if(!actions.length){
+                        this.forceUpdate();
+                    }
+                    return;
+                }
+            }
+            */
         },
 
         render: function () {
@@ -42,8 +57,8 @@ define(function (require) {
             return (
                 <div>{
                     this.state.actions.map(function(action, index){
-                            return <ClickIndicator key={index} name={action.name} position={action.pos}/>
-                        })
+                            return <ClickIndicator key={index} name={action.name} position={action.pos} onAnimationEnd={this.removeIndicator.bind(null, action.id)}/>
+                        }.bind(this))
                     }
                 </div>
             )

@@ -15,12 +15,15 @@ define(function (require) {
     /* simulation context */
     dispatcher.connectTo(NanoFlux.createStore('visualizationStore', visualizationStoreDesc));
     var visualizationActions = NanoFlux.createActions('visualizationActions', dispatcher, {
+        _actionCount : 0,
         _generateHandlerName : function(actionName) {
             return "on" + actionName[0].toUpperCase() + actionName.substr(1);
         },
 
+
         triggerAction : function(actionName, payload){
             var actionContext = {
+                id: this._actionCount++,
                 name : actionName,
                 storeName : this._generateHandlerName(actionName),
                 payload: payload,
