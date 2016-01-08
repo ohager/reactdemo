@@ -14,7 +14,7 @@ define(function (require) {
 
           return React.createClass({
 
-            CanvasUrl : window.Global.githubSourcePath + '/fluxsimulator.canvas.js',
+            CanvasUrl : window.Global.githubSourcePath + '/jsx/canvas/fluxsimulator.canvas.jsx',
 
             getInitialState: function () {
                 return {};

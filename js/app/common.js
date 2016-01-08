@@ -36,7 +36,7 @@ require(['jquery', 'bootstrap', 'react'], function($, _b, React){
 	window.React = React;
     window.Global = {
         githubUrl: "http://github.com/ohager/reactdemo",
-        githubSourcePath: "https://github.com/ohager/reactdemo/blob/master/js/views/components/canvas"
+        githubSourcePath: "https://github.com/ohager/reactdemo/blob/master/"
     };
 
     //polyfills
