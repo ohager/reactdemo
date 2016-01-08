@@ -44,6 +44,7 @@ define(function (require) {
                             <div className="col-xs-12 col-sm-12">
                                 <h2>Flux Simulator</h2>
                                 <p>This example visualizes the Data Flow in a Flux Architecture.</p>
+                                <h4>Still in development!!</h4>
                                 <a href={this.CanvasUrl} target="_blank">Code</a>
                                 <hr/>
                             </div>
