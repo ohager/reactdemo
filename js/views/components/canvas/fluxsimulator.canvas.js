@@ -26,6 +26,10 @@ define(function (require) {
             componentDidMount : function(){
             },
 
+              storeMousePosition: function(event){
+                  console.log(event.pageX);
+              },
+
             render: function () {
 
                 var fixedHeightStyle = {
@@ -33,7 +37,7 @@ define(function (require) {
                 };
 
                 return (
-                    React.createElement("div", null, 
+                    React.createElement("div", {onClick: this.storeMousePosition}, 
                         React.createElement(VisualizationContainer, null), 
 
                         React.createElement("div", {className: "row"}, 

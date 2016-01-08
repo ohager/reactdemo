@@ -12,12 +12,14 @@ define(function (require) {
         _subscription: null,
 
         getInitialState: function () {
-            return { action : null }
+            return { actions : [] }
         },
 
         onActionTriggered: function (action) {
             if(this.isMounted()) {
-                this.setState({action : action});
+                var actions = this.state.actions;
+                actions.push(action);
+                this.setState({actions : actions});
             }
         },
 
@@ -32,15 +34,16 @@ define(function (require) {
         },
 
         removeIndicator : function(){
-            this.setState( {action : null} );
+            //this.setState( {action : null} );
         },
-
 
         render: function () {
 
             return (
                 <div>{
-                        this.state.action ? <ClickIndicator name={this.state.action.name} position={this.state.action.pos} onAnimationEnd={this.removeIndicator}/> : null
+                    this.state.actions.map(function(action, index){
+                            return <ClickIndicator key={index} name={action.name} position={action.pos}/>
+                        })
                     }
                 </div>
             )

@@ -26,6 +26,10 @@ define(function (require) {
             componentDidMount : function(){
             },
 
+              storeMousePosition: function(event){
+                  console.log(event.pageX);
+              },
+
             render: function () {
 
                 var fixedHeightStyle = {
@@ -33,7 +37,7 @@ define(function (require) {
                 };
 
                 return (
-                    <div>
+                    <div onClick={this.storeMousePosition}>
                         <VisualizationContainer/>
 
                         <div className="row">

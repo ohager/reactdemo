@@ -4,19 +4,10 @@ define(function (require) {
     var userStoreDesc = require('component/fluxsimulator/user.store');
     var visualizationStoreDesc = require('component/fluxsimulator/visualization.store');
     var dispatcher = NanoFlux.getDispatcher('simulatorDispatcher');
-
+    var MouseListener = require('common/mouselistener');
 
 
     if (dispatcher) return;
-
-    var Mouse = {
-        clickposition : { x: 0 , y: 0 }
-    }
-    window.addEventListener('mousedown', function(e){
-        Mouse.clickposition.x = e.pageX;
-        Mouse.clickposition.y = e.pageY;
-    });
-
 
 
     dispatcher = NanoFlux.createDispatcher('simulatorDispatcher');
@@ -33,7 +24,7 @@ define(function (require) {
                 name : actionName,
                 storeName : this._generateHandlerName(actionName),
                 payload: payload,
-                pos: Mouse.clickposition
+                pos: MouseListener.getClickPosition()
             };
             this.dispatch('triggerAction', actionContext);
         }
